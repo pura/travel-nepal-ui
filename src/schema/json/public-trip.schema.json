@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://travelnepal.local/schema/public-trip.json",
+  "title": "PublicTrip",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "slug",
+    "title",
+    "summary",
+    "durationDays",
+    "tripType",
+    "budgetLevel",
+    "comfortLevel",
+    "difficultyLevel",
+    "interestTags"
+  ],
+  "properties": {
+    "id": { "type": "integer" },
+    "slug": { "type": "string" },
+    "title": { "type": "string" },
+    "summary": { "type": "string" },
+    "description": { "type": "string" },
+    "durationDays": { "type": "integer", "minimum": 1 },
+    "tripType": {
+      "type": "string",
+      "enum": [
+        "cultural_heritage",
+        "trekking_hiking",
+        "adventure",
+        "wildlife_jungle",
+        "spiritual_pilgrimage",
+        "luxury_leisure",
+        "family"
+      ]
+    },
+    "budgetLevel": { "type": "string", "enum": ["budget", "mid_range", "premium"] },
+    "comfortLevel": { "type": "string", "enum": ["basic", "standard", "premium"] },
+    "difficultyLevel": { "type": "string", "enum": ["easy", "moderate", "challenging"] },
+    "interestTags": { "type": "array", "items": { "type": "string" } },
+    "priceFrom": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["amount", "currency"],
+          "properties": {
+            "amount": { "type": "string" },
+            "currency": { "type": "string", "enum": ["USD", "EUR", "GBP", "NPR"] }
+          }
+        }
+      ]
+    },
+    "imageUrl": { "type": ["string", "null"] },
+    "startingRegion": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["slug", "name"],
+          "properties": {
+            "slug": { "type": "string" },
+            "name": { "type": "string" }
+          }
+        },
+        { "type": "null" }
+      ]
+    },
+    "services": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["included", "excluded", "optional"],
+      "properties": {
+        "included": { "type": "array", "items": { "type": "string" } },
+        "excluded": { "type": "array", "items": { "type": "string" } },
+        "optional": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "days": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["dayNumber", "title", "description"],
+        "properties": {
+          "dayNumber": { "type": "integer", "minimum": 1 },
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "details": { "type": "string" },
+          "meals": { "type": "string" },
+          "destinationSlug": { "type": ["string", "null"] },
+          "destinationName": { "type": ["string", "null"] }
+        }
+      }
+    }
+  }
+}

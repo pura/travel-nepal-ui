@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://travelnepal.local/schema/booking-response.json",
+  "title": "BookingResponse",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["ok"],
+  "properties": {
+    "ok": { "type": "boolean" },
+    "bookingReference": { "type": "string" },
+    "paymentUrl": { "type": ["string", "null"] },
+    "message": { "type": "string" }
+  }
+}

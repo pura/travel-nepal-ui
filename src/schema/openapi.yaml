@@ -1,0 +1,282 @@
+openapi: 3.0.3
+info:
+  title: Travel Nepal — public catalog API
+  description: >
+    Contract for the customer-facing Next.js app and the Symfony backend.
+    Mock implementation lives in this repo under `/api/v1/*`; Symfony should
+    expose the same paths and JSON shapes (strip PII from catalog entities).
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:3000
+    description: Next.js mock (dev)
+  - url: https://api.example.com
+    description: Production Symfony (replace)
+
+tags:
+  - name: Trips
+  - name: Bookings
+
+paths:
+  /api/v1/trips:
+    get:
+      tags: [Trips]
+      summary: List published trips
+      operationId: listTrips
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TripsListResponse"
+
+  /api/v1/trips/{slug}:
+    get:
+      tags: [Trips]
+      summary: Get one trip by URL slug
+      operationId: getTripBySlug
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PublicTrip"
+        "404":
+          description: Unknown slug
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorBody"
+
+  /api/v1/bookings:
+    post:
+      tags: [Bookings]
+      summary: Create a booking (deposit / full payment flow is backend-specific)
+      operationId: createBooking
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BookingRequest"
+      responses:
+        "200":
+          description: Booking accepted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BookingResponse"
+        "400":
+          description: Validation or business rule failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BookingResponse"
+
+components:
+  schemas:
+    ErrorBody:
+      type: object
+      required: [ok, message]
+      properties:
+        ok:
+          type: boolean
+          example: false
+        message:
+          type: string
+
+    Money:
+      type: object
+      required: [amount, currency]
+      properties:
+        amount:
+          type: string
+          description: Decimal as string for precision
+        currency:
+          type: string
+          enum: [USD, EUR, GBP, NPR]
+
+    StartingRegion:
+      type: object
+      required: [slug, name]
+      properties:
+        slug:
+          type: string
+        name:
+          type: string
+
+    PublicTripDay:
+      type: object
+      required: [dayNumber, title, description]
+      properties:
+        dayNumber:
+          type: integer
+          minimum: 1
+        title:
+          type: string
+        description:
+          type: string
+        details:
+          type: string
+        meals:
+          type: string
+        destinationSlug:
+          type: string
+          nullable: true
+        destinationName:
+          type: string
+          nullable: true
+
+    TripType:
+      type: string
+      enum:
+        - cultural_heritage
+        - trekking_hiking
+        - adventure
+        - wildlife_jungle
+        - spiritual_pilgrimage
+        - luxury_leisure
+        - family
+
+    BudgetLevel:
+      type: string
+      enum: [budget, mid_range, premium]
+    ComfortLevel:
+      type: string
+      enum: [basic, standard, premium]
+    DifficultyLevel:
+      type: string
+      enum: [easy, moderate, challenging]
+
+    PublicTrip:
+      type: object
+      required:
+        - id
+        - slug
+        - title
+        - summary
+        - durationDays
+        - tripType
+        - budgetLevel
+        - comfortLevel
+        - difficultyLevel
+        - interestTags
+      properties:
+        id:
+          type: integer
+        slug:
+          type: string
+        title:
+          type: string
+        summary:
+          type: string
+        description:
+          type: string
+        durationDays:
+          type: integer
+          minimum: 1
+        tripType:
+          $ref: "#/components/schemas/TripType"
+        budgetLevel:
+          $ref: "#/components/schemas/BudgetLevel"
+        comfortLevel:
+          $ref: "#/components/schemas/ComfortLevel"
+        difficultyLevel:
+          $ref: "#/components/schemas/DifficultyLevel"
+        interestTags:
+          type: array
+          items:
+            type: string
+        priceFrom:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/Money"
+        imageUrl:
+          type: string
+          nullable: true
+        startingRegion:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/StartingRegion"
+        services:
+          type: object
+          required: [included, excluded, optional]
+          properties:
+            included:
+              type: array
+              items:
+                type: string
+            excluded:
+              type: array
+              items:
+                type: string
+            optional:
+              type: array
+              items:
+                type: string
+        days:
+          type: array
+          items:
+            $ref: "#/components/schemas/PublicTripDay"
+
+    TripsListResponse:
+      type: object
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/PublicTrip"
+
+    BookingRequest:
+      type: object
+      required:
+        - tripSlug
+        - tripId
+        - travelers
+        - startDate
+        - email
+        - fullName
+      properties:
+        tripSlug:
+          type: string
+        tripId:
+          type: integer
+        travelers:
+          type: integer
+          minimum: 1
+          maximum: 20
+        startDate:
+          type: string
+          format: date
+          description: ISO 8601 date (YYYY-MM-DD)
+        email:
+          type: string
+          format: email
+        fullName:
+          type: string
+        notes:
+          type: string
+
+    BookingResponse:
+      type: object
+      required: [ok]
+      properties:
+        ok:
+          type: boolean
+        bookingReference:
+          type: string
+        paymentUrl:
+          type: string
+          nullable: true
+          description: Optional redirect (e.g. Stripe Checkout)
+        message:
+          type: string

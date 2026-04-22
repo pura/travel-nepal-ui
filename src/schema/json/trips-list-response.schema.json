@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://travelnepal.local/schema/trips-list-response.json",
+  "title": "TripsListResponse",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["items"],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": { "$ref": "public-trip.schema.json" }
+    }
+  }
+}

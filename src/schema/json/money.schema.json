@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://travelnepal.local/schema/money.json",
+  "title": "Money",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["amount", "currency"],
+  "properties": {
+    "amount": { "type": "string" },
+    "currency": { "type": "string", "enum": ["USD", "EUR", "GBP", "NPR"] }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://travelnepal.local/schema/error-body.json",
+  "title": "ErrorBody",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["ok", "message"],
+  "properties": {
+    "ok": { "type": "boolean", "const": false },
+    "message": { "type": "string" }
+  }
+}
