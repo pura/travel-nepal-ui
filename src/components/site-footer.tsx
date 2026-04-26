@@ -6,7 +6,8 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="flex flex-col gap-8 sm:flex-row sm:justify-between">
           <div>
-            <p className="text-lg font-semibold text-emerald-900">Travel Nepal</p>
+            <p className="text-lg font-semibold text-emerald-900">DreamExploreRepeat.com</p>
+            <p className="mt-1 text-sm text-stone-700">Leave us to curate your journey.</p>
             <p className="mt-2 max-w-sm text-sm text-stone-600">
               Curated itineraries from local operators. Book with confidence — full
               payment integration connects to your Symfony backend.
@@ -25,8 +26,8 @@ export function SiteFooter() {
           </div>
         </div>
         <p className="mt-10 text-xs text-stone-500">
-          © {new Date().getFullYear()} Travel Nepal. Prices shown are indicative until
-          your API supplies live rates.
+          © {new Date().getFullYear()} DreamExploreRepeat.com. Prices shown are
+          indicative until your API supplies live rates.
         </p>
       </div>
     </footer>
