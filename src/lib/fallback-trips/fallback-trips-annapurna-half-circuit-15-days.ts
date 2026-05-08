@@ -1,4 +1,5 @@
 import type { PublicTrip } from "@/types/trip";
+import { FALLBACK_DETAIL_MOCK_HIGH_PASS } from "@/lib/fallback-trips/fallback-trip-detail-mocks";
 
 export const FALLBACK_TRIP_ANNAPURNA_HALF_CIRCUIT_15_DAYS: PublicTrip = {
   id: 11,
@@ -26,6 +27,10 @@ export const FALLBACK_TRIP_ANNAPURNA_HALF_CIRCUIT_15_DAYS: PublicTrip = {
   imageUrl:
     "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
   startingRegion: { slug: "kathmandu-valley", name: "Kathmandu Valley" },
+  ...FALLBACK_DETAIL_MOCK_HIGH_PASS,
+  totalDistanceKm: 180,
+  altitudeMaxM: 5416,
+  galleryImageUrls: ["https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80"],
   services: {
     included: [
       "Jomsom–Pokhara one-way flight ticket, if applicable",

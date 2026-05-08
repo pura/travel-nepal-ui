@@ -134,6 +134,70 @@ components:
         destinationName:
           type: string
           nullable: true
+        distanceKm:
+          type: number
+        altitudeMaxM:
+          type: number
+        altitudeMinM:
+          type: number
+        durationHours:
+          type: number
+        accommodation:
+          type: string
+
+    TripPriceTable:
+      type: object
+      required: [currency, columns, rows]
+      properties:
+        currency:
+          type: string
+          enum: [USD, EUR, GBP, NPR]
+        footnote:
+          type: string
+        supplementaryChargePercent:
+          type: number
+        columns:
+          type: array
+          items:
+            type: object
+            required: [key, label]
+            properties:
+              key:
+                type: string
+              label:
+                type: string
+        rows:
+          type: array
+          items:
+            type: object
+            required: [label, prices]
+            properties:
+              label:
+                type: string
+              prices:
+                type: object
+                additionalProperties:
+                  type: string
+
+    TripFaqItem:
+      type: object
+      required: [question, answer]
+      properties:
+        question:
+          type: string
+        answer:
+          type: string
+
+    TripReviewSnippet:
+      type: object
+      required: [name]
+      properties:
+        name:
+          type: string
+        location:
+          type: string
+        date:
+          type: string
 
     TripType:
       type: string
@@ -226,6 +290,57 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/PublicTripDay"
+        totalDistanceKm:
+          type: number
+        altitudeMaxM:
+          type: number
+        altitudeMinM:
+          type: number
+        routeGrades:
+          type: array
+          items:
+            type: string
+        fitnessNotes:
+          type: array
+          items:
+            type: string
+        recommendedSeasons:
+          type: array
+          items:
+            type: string
+        mapImageUrl:
+          type: string
+          nullable: true
+        galleryImageUrls:
+          type: array
+          items:
+            type: string
+        priceTable:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/TripPriceTable"
+        bookingFeeItems:
+          type: array
+          items:
+            type: string
+        gearChecklist:
+          type: array
+          items:
+            type: string
+        trekkingGradeNotes:
+          type: string
+          nullable: true
+        faq:
+          type: array
+          items:
+            $ref: "#/components/schemas/TripFaqItem"
+        reviewSnippets:
+          type: array
+          items:
+            $ref: "#/components/schemas/TripReviewSnippet"
+        sourceReferenceUrl:
+          type: string
+          nullable: true
 
     TripsListResponse:
       type: object

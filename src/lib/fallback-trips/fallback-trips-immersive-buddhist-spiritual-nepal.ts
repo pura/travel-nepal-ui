@@ -1,4 +1,5 @@
 import type { PublicTrip } from "@/types/trip";
+import { FALLBACK_DETAIL_MOCK_CITY_TOUR } from "@/lib/fallback-trips/fallback-trip-detail-mocks";
 
 export const FALLBACK_TRIP_IMMERSIVE_BUDDHIST_SPIRITUAL_NEPAL: PublicTrip = {
   id: 6,
@@ -18,6 +19,8 @@ export const FALLBACK_TRIP_IMMERSIVE_BUDDHIST_SPIRITUAL_NEPAL: PublicTrip = {
   imageUrl:
     "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1200&q=80",
   startingRegion: { slug: "kathmandu-valley", name: "Kathmandu Valley" },
+  ...FALLBACK_DETAIL_MOCK_CITY_TOUR,
+  galleryImageUrls: ["https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1200&q=80"],
   services: {
     included: [
       "Pick up and transfer to the hotel",

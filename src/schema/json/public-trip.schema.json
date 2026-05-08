@@ -91,9 +91,93 @@
           "details": { "type": "string" },
           "meals": { "type": "string" },
           "destinationSlug": { "type": ["string", "null"] },
-          "destinationName": { "type": ["string", "null"] }
+          "destinationName": { "type": ["string", "null"] },
+          "distanceKm": { "type": "number" },
+          "altitudeMaxM": { "type": "number" },
+          "altitudeMinM": { "type": "number" },
+          "durationHours": { "type": "number" },
+          "accommodation": { "type": "string" }
         }
       }
-    }
+    },
+    "totalDistanceKm": { "type": "number" },
+    "altitudeMaxM": { "type": "number" },
+    "altitudeMinM": { "type": "number" },
+    "routeGrades": { "type": "array", "items": { "type": "string" } },
+    "fitnessNotes": { "type": "array", "items": { "type": "string" } },
+    "recommendedSeasons": { "type": "array", "items": { "type": "string" } },
+    "mapImageUrl": { "type": ["string", "null"] },
+    "galleryImageUrls": { "type": "array", "items": { "type": "string" } },
+    "priceTable": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["currency", "columns", "rows"],
+          "properties": {
+            "currency": { "type": "string", "enum": ["USD", "EUR", "GBP", "NPR"] },
+            "footnote": { "type": "string" },
+            "supplementaryChargePercent": { "type": "number" },
+            "columns": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["key", "label"],
+                "properties": {
+                  "key": { "type": "string" },
+                  "label": { "type": "string" }
+                }
+              }
+            },
+            "rows": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["label", "prices"],
+                "properties": {
+                  "label": { "type": "string" },
+                  "prices": {
+                    "type": "object",
+                    "additionalProperties": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "bookingFeeItems": { "type": "array", "items": { "type": "string" } },
+    "gearChecklist": { "type": "array", "items": { "type": "string" } },
+    "trekkingGradeNotes": { "type": ["string", "null"] },
+    "faq": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["question", "answer"],
+        "properties": {
+          "question": { "type": "string" },
+          "answer": { "type": "string" }
+        }
+      }
+    },
+    "reviewSnippets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string" },
+          "location": { "type": "string" },
+          "date": { "type": "string" }
+        }
+      }
+    },
+    "sourceReferenceUrl": { "type": ["string", "null"] }
   }
 }

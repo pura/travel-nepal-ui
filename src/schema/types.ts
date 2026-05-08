@@ -25,6 +25,42 @@ export type PublicTripDay = {
   meals?: string;
   destinationSlug?: string | null;
   destinationName?: string | null;
+  /** Optional day stats (e.g. trekking fact boxes) */
+  distanceKm?: number;
+  altitudeMaxM?: number;
+  altitudeMinM?: number;
+  durationHours?: number;
+  accommodation?: string;
+};
+
+export type TripPriceTableColumn = {
+  key: string;
+  label: string;
+};
+
+export type TripPriceTableRow = {
+  label: string;
+  /** Amount as decimal string, keyed by column key (e.g. "2", "4", "8") */
+  prices: Record<string, string>;
+};
+
+export type TripPriceTable = {
+  currency: Money["currency"];
+  footnote?: string;
+  supplementaryChargePercent?: number;
+  columns: TripPriceTableColumn[];
+  rows: TripPriceTableRow[];
+};
+
+export type TripFaqItem = {
+  question: string;
+  answer: string;
+};
+
+export type TripReviewSnippet = {
+  name: string;
+  location?: string;
+  date?: string;
 };
 
 export type TripServices = {
@@ -50,6 +86,25 @@ export type PublicTrip = {
   startingRegion?: { slug: string; name: string } | null;
   services?: TripServices;
   days?: PublicTripDay[];
+  /** Route-wide facts */
+  totalDistanceKm?: number;
+  altitudeMaxM?: number;
+  altitudeMinM?: number;
+  routeGrades?: string[];
+  fitnessNotes?: string[];
+  recommendedSeasons?: string[];
+  /** Extra imagery */
+  mapImageUrl?: string | null;
+  galleryImageUrls?: string[];
+  /** Optional richer pricing (group tiers); `priceFrom` remains the primary “from” hint */
+  priceTable?: TripPriceTable | null;
+  bookingFeeItems?: string[];
+  gearChecklist?: string[];
+  trekkingGradeNotes?: string | null;
+  faq?: TripFaqItem[];
+  reviewSnippets?: TripReviewSnippet[];
+  /** Credit / canonical detail page when content is adapted */
+  sourceReferenceUrl?: string | null;
 };
 
 export type TripsListResponse = {

@@ -1,4 +1,5 @@
 import type { PublicTrip } from "@/types/trip";
+import { FALLBACK_DETAIL_MOCK_CITY_TOUR } from "@/lib/fallback-trips/fallback-trip-detail-mocks";
 
 export const FALLBACK_TRIP_NEPAL_PREMIUM_NATURE_CULTURE_8_DAYS: PublicTrip = {
   id: 9,
@@ -27,6 +28,8 @@ export const FALLBACK_TRIP_NEPAL_PREMIUM_NATURE_CULTURE_8_DAYS: PublicTrip = {
   imageUrl:
     "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=1200&q=80",
   startingRegion: { slug: "kathmandu-valley", name: "Kathmandu Valley" },
+  ...FALLBACK_DETAIL_MOCK_CITY_TOUR,
+  galleryImageUrls: ["https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=1200&q=80"],
   services: {
     included: [
       "Airport meet-and-greet and transfer to the hotel",

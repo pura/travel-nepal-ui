@@ -1,4 +1,5 @@
 import type { PublicTrip } from "@/types/trip";
+import { FALLBACK_DETAIL_MOCK_HILL_TREK } from "@/lib/fallback-trips/fallback-trip-detail-mocks";
 
 export const FALLBACK_TRIP_GHOREPANI_POON_HILL: PublicTrip = {
   id: 3,
@@ -18,6 +19,8 @@ export const FALLBACK_TRIP_GHOREPANI_POON_HILL: PublicTrip = {
   imageUrl:
     "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
   startingRegion: { slug: "kathmandu-valley", name: "Kathmandu Valley" },
+  ...FALLBACK_DETAIL_MOCK_HILL_TREK,
+  galleryImageUrls: ["https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80"],
   services: {
     included: [
       "2 nights in hotel in Kathmandu on twin/triple basis",

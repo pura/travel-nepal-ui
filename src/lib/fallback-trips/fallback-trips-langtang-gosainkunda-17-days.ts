@@ -1,4 +1,5 @@
 import type { PublicTrip } from "@/types/trip";
+import { FALLBACK_DETAIL_MOCK_HILL_TREK } from "@/lib/fallback-trips/fallback-trip-detail-mocks";
 
 export const FALLBACK_TRIP_LANGTANG_GOSAINKUNDA_17_DAYS: PublicTrip = {
   id: 13,
@@ -27,6 +28,11 @@ export const FALLBACK_TRIP_LANGTANG_GOSAINKUNDA_17_DAYS: PublicTrip = {
   imageUrl:
     "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1200&q=80",
   startingRegion: { slug: "kathmandu-valley", name: "Kathmandu Valley" },
+  ...FALLBACK_DETAIL_MOCK_HILL_TREK,
+  totalDistanceKm: 195,
+  altitudeMaxM: 4610,
+  altitudeMinM: 1400,
+  galleryImageUrls: ["https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1200&q=80"],
   services: {
     included: [
       "16 nights in a double room in the booked hotel category (teahouses on trek)",

@@ -1,4 +1,5 @@
 import type { PublicTrip } from "@/types/trip";
+import { FALLBACK_DETAIL_MOCK_HILL_TREK } from "@/lib/fallback-trips/fallback-trip-detail-mocks";
 
 export const FALLBACK_TRIP_POON_HILL_TASTER_POKHARA_5_DAYS: PublicTrip = {
   id: 14,
@@ -26,6 +27,10 @@ export const FALLBACK_TRIP_POON_HILL_TASTER_POKHARA_5_DAYS: PublicTrip = {
   imageUrl:
     "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
   startingRegion: { slug: "pokhara", name: "Pokhara" },
+  ...FALLBACK_DETAIL_MOCK_HILL_TREK,
+  totalDistanceKm: 48,
+  altitudeMaxM: 3210,
+  galleryImageUrls: ["https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80"],
   services: {
     included: [
       "Accommodation in twin-sharing teahouses on the trek",

@@ -1,4 +1,5 @@
 import type { PublicTrip } from "@/types/trip";
+import { FALLBACK_DETAIL_MOCK_HIGH_PASS } from "@/lib/fallback-trips/fallback-trip-detail-mocks";
 
 export const FALLBACK_TRIP_UPPER_MUSTANG_20_DAYS: PublicTrip = {
   id: 15,
@@ -26,6 +27,10 @@ export const FALLBACK_TRIP_UPPER_MUSTANG_20_DAYS: PublicTrip = {
   imageUrl:
     "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1200&q=80",
   startingRegion: { slug: "kathmandu-valley", name: "Kathmandu Valley" },
+  ...FALLBACK_DETAIL_MOCK_HIGH_PASS,
+  totalDistanceKm: 240,
+  altitudeMaxM: 4230,
+  galleryImageUrls: ["https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1200&q=80"],
   services: {
     included: [
       "Airport pick-up and transfer to the hotel",

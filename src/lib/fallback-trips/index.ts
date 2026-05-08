@@ -13,6 +13,7 @@ import { FALLBACK_TRIP_LANGTANG_GOSAINKUNDA_17_DAYS } from "@/lib/fallback-trips
 import { FALLBACK_TRIP_POON_HILL_TASTER_POKHARA_5_DAYS } from "@/lib/fallback-trips/fallback-trips-poon-hill-taster-pokhara-5-days";
 import { FALLBACK_TRIP_UPPER_MUSTANG_20_DAYS } from "@/lib/fallback-trips/fallback-trips-upper-mustang-20-days";
 import { FALLBACK_TRIP_EVEREST_MOUNTAIN_FLIGHT_1_DAY } from "@/lib/fallback-trips/fallback-trips-everest-mountain-flight-1-day";
+import { FALLBACK_TRIP_LANGTANG_VALLEY_GANJA_LA_PASS_14_DAYS } from "@/lib/fallback-trips/fallback-trips-langtang-valley-ganja-la-pass-14-days";
 
 /** Used when Symfony is unavailable or NEXT_PUBLIC_USE_TRIP_MOCKS=true */
 export const FALLBACK_TRIPS: PublicTrip[] = [
@@ -30,4 +31,5 @@ export const FALLBACK_TRIPS: PublicTrip[] = [
   FALLBACK_TRIP_POON_HILL_TASTER_POKHARA_5_DAYS,
   FALLBACK_TRIP_UPPER_MUSTANG_20_DAYS,
   FALLBACK_TRIP_EVEREST_MOUNTAIN_FLIGHT_1_DAY,
+  FALLBACK_TRIP_LANGTANG_VALLEY_GANJA_LA_PASS_14_DAYS,
 ];

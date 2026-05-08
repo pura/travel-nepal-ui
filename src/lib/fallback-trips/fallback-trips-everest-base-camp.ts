@@ -1,4 +1,5 @@
 import type { PublicTrip } from "@/types/trip";
+import { FALLBACK_DETAIL_MOCK_HIGH_PASS } from "@/lib/fallback-trips/fallback-trip-detail-mocks";
 
 export const FALLBACK_TRIP_EVEREST_BASE_CAMP: PublicTrip = {
   id: 12,
@@ -26,6 +27,10 @@ export const FALLBACK_TRIP_EVEREST_BASE_CAMP: PublicTrip = {
   imageUrl:
     "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80",
   startingRegion: { slug: "kathmandu-valley", name: "Kathmandu Valley" },
+  ...FALLBACK_DETAIL_MOCK_HIGH_PASS,
+  totalDistanceKm: 200,
+  altitudeMaxM: 5644,
+  galleryImageUrls: ["https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80"],
   services: {
     included: [
       "Kathmandu–Lukla–Kathmandu round-trip airfare as applicable",
