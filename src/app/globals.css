@@ -3,18 +3,46 @@
 @tailwind utilities;
 
 :root {
-  --background: #fafaf9;
-  --foreground: #1c1917;
+  --background: #faf9f7;
+  --foreground: #1f1e1c;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .hero-gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(14, 33, 27, 0.55) 0%,
+      rgba(14, 33, 27, 0.35) 40%,
+      rgba(14, 33, 27, 0.75) 100%
+    );
+  }
+
+  .card-image-overlay {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(14, 33, 27, 0.15) 40%,
+      rgba(14, 33, 27, 0.85) 100%
+    );
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
   }
 }
