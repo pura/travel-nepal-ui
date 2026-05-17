@@ -20,26 +20,28 @@ export function DestinationsSection() {
           />
         </div>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
-          {DESTINATIONS.map((dest, i) => (
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {DESTINATIONS.map((dest) => (
             <Link
               key={dest.slug}
-              href={`/trips?region=${dest.slug}`}
-              className={`group relative overflow-hidden rounded-3xl ${
-                i === 0 ? "sm:col-span-2 sm:row-span-2 lg:col-span-2 lg:row-span-2" : "lg:col-span-1"
-              } ${i === 0 ? "aspect-[4/5] min-h-[280px]" : "aspect-[4/5] min-h-[200px]"}`}
+              href={`/destinations/${dest.slug}`}
+              className="group relative aspect-[4/3] min-h-[200px] w-full overflow-hidden rounded-3xl border border-white/10 bg-charcoal-900/40 sm:min-h-[220px]"
             >
               <Image
                 src={dest.image}
-                alt={dest.name}
+                alt=""
+                aria-hidden
                 fill
                 className="object-cover transition duration-700 group-hover:scale-105"
-                sizes={i === 0 ? "50vw" : "25vw"}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               <div className="card-image-overlay absolute inset-0" aria-hidden />
-              <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
-                <h3 className="font-display text-2xl font-semibold">{dest.name}</h3>
-                <p className="mt-1 text-sm text-white/80">{dest.tagline}</p>
+              <div className="absolute inset-x-0 bottom-0 flex flex-col p-5 sm:p-6">
+                <h3 className="font-display text-xl font-semibold leading-snug tracking-tight sm:text-2xl">{dest.name}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-white/85">{dest.tagline}</p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-200 transition group-hover:text-white">
+                  Explore region<span aria-hidden>→</span>
+                </span>
               </div>
             </Link>
           ))}

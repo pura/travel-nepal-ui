@@ -29,7 +29,7 @@ export function SiteFooter() {
               {DESTINATIONS.map((d) => (
                 <li key={d.slug}>
                   <Link
-                    href={`/trips?region=${d.slug}`}
+                    href={`/destinations/${d.slug}`}
                     className="transition hover:text-white"
                   >
                     {d.name}
@@ -50,7 +50,7 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/#plan-trip" className="transition hover:text-white">
+                <Link href="/plan" className="transition hover:text-white">
                   Custom itinerary
                 </Link>
               </li>

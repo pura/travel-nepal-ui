@@ -1,82 +1,210 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { type ReactNode, useEffect, useState } from "react";
 import { ButtonLink } from "@/components/ui/button";
+import { IconCalendar, IconRoute, IconStar, IconWhatsApp } from "@/components/ui/icons";
 import { getWhatsAppUrl, SITE } from "@/lib/site-config";
 
-const links = [
-  { href: "/trips", label: "Tours and Trips" },
-  { href: "/#destinations-heading", label: "Destinations" },
-  { href: "/#why-book-heading", label: "Why us" },
-  { href: "/#plan-trip", label: "Plan trip" },
+type NavIcon = (props: { className?: string }) => JSX.Element;
+
+const navLinks: ReadonlyArray<{
+  href: string;
+  label: string;
+  Icon: NavIcon;
+}> = [
+  { href: "/trips", label: "Trips & tours", Icon: IconRoute },
+  { href: "/#why-book-heading", label: "Why us", Icon: IconStar },
 ];
 
+function isActiveHref(pathname: string, href: string) {
+  if (href.startsWith("/trips")) {
+    return pathname === "/trips" || pathname.startsWith("/trips/");
+  }
+  return false;
+}
+
+function NavLink({
+  href,
+  Icon,
+  children,
+  onClick,
+}: {
+  href: string;
+  Icon: NavIcon;
+  children: ReactNode;
+  onClick?: () => void;
+}) {
+  const pathname = usePathname();
+  const active = isActiveHref(pathname, href);
+
+  return (
+    <Link
+      href={href}
+      onClick={onClick}
+      className={`group inline-flex items-center gap-2 rounded-lg px-3 py-2 text-[0.9375rem] font-medium tracking-tight transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 ${
+        active
+          ? "bg-brand-50 text-brand-800"
+          : "text-charcoal-600 hover:bg-charcoal-100/70 hover:text-charcoal-900"
+      }`}
+    >
+      <span className={`inline-flex shrink-0 ${active ? "text-brand-600/90" : "text-charcoal-400 group-hover:text-charcoal-600"}`} aria-hidden>
+        <Icon className="h-[1.0625rem] w-[1.0625rem]" />
+      </span>
+      {children}
+    </Link>
+  );
+}
+
+function IconMenuOpen({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} aria-hidden>
+      <path strokeLinecap="round" d="M5 8h14M5 12h14M5 16h14" />
+    </svg>
+  );
+}
+
+function IconMenuClose({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} aria-hidden>
+      <path strokeLinecap="round" d="M7 7l10 10M17 7L7 17" />
+    </svg>
+  );
+}
+
 export function SiteHeader() {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+    const prev = document.documentElement.style.overflow;
+    document.documentElement.style.overflow = "hidden";
+    return () => {
+      document.documentElement.style.overflow = prev;
+    };
+  }, [menuOpen]);
+
   return (
-    <header className="sticky top-0 z-40 border-b border-charcoal-100/80 bg-[#faf9f7]/90 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-[4.5rem] sm:px-6 lg:px-8">
-        <Link href="/" className="flex flex-col leading-tight" onClick={closeMenu}>
-          <span className="font-display text-lg font-semibold tracking-tight text-brand-900">
+    <header className="sticky top-0 z-40 border-b border-charcoal-200/60 bg-[#faf9f7]/85 shadow-[0_1px_0_rgba(31,30,28,0.04)] backdrop-blur-lg">
+      <div className="mx-auto flex h-[3.75rem] max-w-7xl items-center justify-between gap-4 px-4 sm:h-16 sm:px-6 lg:px-8">
+        <Link
+          href="/"
+          className="min-w-0 shrink-0 leading-tight transition-opacity hover:opacity-90"
+          onClick={closeMenu}
+        >
+          <span className="font-display text-lg font-semibold tracking-tight text-brand-900 sm:text-[1.125rem]">
             {SITE.name}
           </span>
-          <span className="hidden text-xs text-charcoal-500 sm:block">{SITE.tagline}</span>
+          <span className="mt-0.5 hidden text-[11px] font-medium uppercase tracking-[0.16em] text-charcoal-400 sm:block">
+            {SITE.tagline}
+          </span>
         </Link>
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-full border border-charcoal-200 px-4 py-2 text-sm font-medium text-charcoal-700 transition hover:bg-white md:hidden"
+          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-charcoal-200/90 bg-white text-charcoal-700 shadow-sm transition hover:border-charcoal-300 hover:bg-charcoal-50 md:hidden"
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
-          aria-label="Toggle navigation menu"
+          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
           onClick={() => setMenuOpen((prev) => !prev)}
         >
-          {menuOpen ? "Close" : "Menu"}
+          {menuOpen ? <IconMenuClose className="h-5 w-5" /> : <IconMenuOpen className="h-5 w-5" />}
         </button>
 
-        <nav className="hidden items-center gap-8 text-sm font-medium text-charcoal-700 md:flex">
-          {links.map((l) => (
-            <Link key={l.href} href={l.href} className="transition hover:text-brand-700">
-              {l.label}
-            </Link>
-          ))}
-          <ButtonLink href="/#plan-trip" size="sm">
-            Plan Your Trip
-          </ButtonLink>
-          <a
-            href={getWhatsAppUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-semibold text-[#128C7E] transition hover:text-[#0d6b5f]"
-          >
-            WhatsApp
-          </a>
+        <nav
+          aria-label="Main navigation"
+          className="hidden h-full flex-1 items-center justify-end gap-1 md:flex"
+        >
+          <div className="flex items-center rounded-full bg-charcoal-100/35 p-0.5 pr-1 backdrop-blur-sm">
+            {navLinks.map((l) => (
+              <NavLink key={l.href} href={l.href} Icon={l.Icon}>
+                {l.label}
+              </NavLink>
+            ))}
+          </div>
+
+          <span className="mx-2 hidden h-6 w-px shrink-0 bg-charcoal-200 md:block lg:mx-3" aria-hidden />
+
+          <div className="flex items-center gap-2 lg:gap-3">
+            <ButtonLink href="/plan" size="sm" className="shadow-sm">
+              <span className="inline-flex shrink-0 opacity-95" aria-hidden>
+                <IconCalendar className="h-4 w-4" />
+              </span>
+              Plan your trip
+            </ButtonLink>
+            <a
+              href={getWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-[#128C7E]/25 bg-white px-3.5 py-2 text-[0.8125rem] font-semibold text-[#128C7E] shadow-sm transition hover:border-[#128C7E]/40 hover:bg-[#128C7E]/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#128C7E] focus-visible:ring-offset-2"
+            >
+              <IconWhatsApp className="h-4 w-4 shrink-0" />
+              WhatsApp
+            </a>
+          </div>
         </nav>
       </div>
 
       {menuOpen ? (
-        <div id="mobile-menu" className="border-t border-charcoal-100 bg-white md:hidden">
-          <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 text-sm font-medium sm:px-6">
-            {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="rounded-xl px-3 py-2.5 transition hover:bg-brand-50 hover:text-brand-800"
+        <div
+          id="mobile-menu"
+          className="max-h-[min(70vh,calc(100dvh-3.75rem))] overflow-y-auto border-t border-charcoal-200/80 bg-white shadow-inner md:hidden"
+        >
+          <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6" aria-label="Mobile navigation">
+            {navLinks.map((l) => {
+              const Icon = l.Icon;
+              const active = isActiveHref(pathname, l.href);
+              return (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className={`group flex items-center gap-3 rounded-xl px-3 py-3 text-[0.9375rem] font-medium transition-colors ${
+                    active
+                      ? "bg-brand-50 text-brand-800"
+                      : "text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-900"
+                  }`}
+                  onClick={closeMenu}
+                >
+                  <span
+                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border ${
+                      active
+                        ? "border-brand-200/80 bg-brand-100/80 text-brand-700"
+                        : "border-charcoal-200/80 bg-charcoal-50/90 text-charcoal-500 group-hover:border-charcoal-300 group-hover:text-charcoal-700"
+                    }`}
+                    aria-hidden
+                  >
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  {l.label}
+                </Link>
+              );
+            })}
+            <div className="mt-3 flex flex-col gap-2 border-t border-charcoal-100 pt-4">
+              <ButtonLink
+                href="/plan"
+                size="sm"
+                className="w-full justify-center shadow-sm"
                 onClick={closeMenu}
               >
-                {l.label}
-              </Link>
-            ))}
-            <Link
-              href="/#plan-trip"
-              className="mt-2 rounded-full bg-brand-700 px-4 py-3 text-center text-white"
-              onClick={closeMenu}
-            >
-              Plan Your Trip
-            </Link>
+                <span className="inline-flex shrink-0 opacity-95" aria-hidden>
+                  <IconCalendar className="h-4 w-4" />
+                </span>
+                Plan your trip
+              </ButtonLink>
+              <a
+                href={getWhatsAppUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#128C7E]/25 bg-white py-3 text-[0.875rem] font-semibold text-[#128C7E] shadow-sm transition hover:bg-[#128C7E]/[0.06]"
+                onClick={closeMenu}
+              >
+                <IconWhatsApp className="h-5 w-5 shrink-0" aria-hidden />
+                Chat on WhatsApp
+              </a>
+            </div>
           </nav>
         </div>
       ) : null}

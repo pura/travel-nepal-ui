@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { SiteIcon } from "@/components/ui/icons";
+import { IconCalendar, IconWhatsApp, SiteIcon } from "@/components/ui/icons";
 import { HeroInquiryBox } from "@/components/home/hero-inquiry-box";
 import { getWhatsAppUrl, TRUST_BADGES } from "@/lib/site-config";
 
@@ -42,16 +42,21 @@ export function HeroSection() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
-            <ButtonLink href="/#plan-trip" variant="primary" size="lg" className="bg-white text-brand-900 hover:bg-white/95">
-              Plan Your Trip
+            <ButtonLink href="/plan" variant="primary" size="lg" className="shadow-soft">
+              <span className="inline-flex shrink-0 opacity-95" aria-hidden>
+                <IconCalendar className="h-5 w-5" />
+              </span>
+              Plan your trip
             </ButtonLink>
             <ButtonLink
               href={getWhatsAppUrl("Hi! I'd like help planning a trip to Nepal.")}
               variant="whatsapp"
               size="lg"
+              className="shadow-soft"
               target="_blank"
               rel="noopener noreferrer"
             >
+              <IconWhatsApp className="h-5 w-5 shrink-0" />
               Chat on WhatsApp
             </ButtonLink>
           </div>

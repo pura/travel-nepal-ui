@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import { TripsCatalog } from "@/components/trips/trips-catalog";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { isDestinationSlug } from "@/lib/site-config";
 import { groupTripsForCatalog } from "@/lib/trip-catalog";
 import { getTrips } from "@/lib/symfony-api";
 
@@ -11,7 +13,17 @@ export const metadata: Metadata = {
     "Browse trekking routes, cultural tours, and pilgrimage journeys across Nepal—with clear duration and difficulty.",
 };
 
-export default async function TripsPage() {
+type TripsPageProps = {
+  searchParams: Record<string, string | string[] | undefined>;
+};
+
+export default async function TripsPage({ searchParams }: TripsPageProps) {
+  const rawRegion = searchParams.region;
+  const regionParam = typeof rawRegion === "string" ? rawRegion : rawRegion?.[0];
+  if (regionParam && isDestinationSlug(regionParam)) {
+    redirect(`/destinations/${regionParam}`);
+  }
+
   const { items } = await getTrips();
   const catalog = groupTripsForCatalog(items);
 

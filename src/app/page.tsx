@@ -4,7 +4,7 @@ import { FaqSection } from "@/components/home/faq-section";
 import { FeaturedToursSection } from "@/components/home/featured-tours-section";
 import { HeroSection } from "@/components/home/hero-section";
 import { InquiryCtaSection } from "@/components/home/inquiry-cta-section";
-import { TeamSection } from "@/components/home/team-section";
+import { PartnersSection } from "@/components/home/partners-section";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { WhyBookSection } from "@/components/home/why-book-section";
 import { getFeaturedTrips } from "@/lib/trip-catalog";
@@ -22,7 +22,7 @@ export default async function HomePage() {
       <WhyBookSection />
       <DestinationsSection />
       <InquiryCtaSection />
-      <TeamSection />
+      <PartnersSection />
       <TestimonialsSection />
       <FaqSection />
     </>

@@ -57,41 +57,66 @@ export const WHY_BOOK = [
   },
 ] as const;
 
+export const DESTINATION_SLUGS = [
+  "everest",
+  "kathmandu",
+  "pokhara",
+  "chitwan",
+  "annapurna",
+] as const;
+
+export type DestinationSlug = (typeof DESTINATION_SLUGS)[number];
+
+export function isDestinationSlug(value: string): value is DestinationSlug {
+  return (DESTINATION_SLUGS as readonly string[]).includes(value);
+}
+
+/** Marketing destinations grid + standalone /destinations/[slug] pages */
 export const DESTINATIONS = [
   {
     name: "Everest",
-    slug: "everest",
+    slug: "everest" satisfies DestinationSlug,
     tagline: "Khumbu & legendary peaks",
     image:
       "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80&auto=format&fit=crop",
+    description:
+      "The Everest region draws trekkers seeking Sherpa hospitality, roaring rivers, and the drama of Himalayan giants. Trails like Everest Base Camp and Gokyo’s turquoise lakes weave through Sagarmatha National Park—a landscape of glaciers, prayer flags, and lodges with unforgettable views.",
   },
   {
     name: "Kathmandu",
-    slug: "kathmandu",
+    slug: "kathmandu" satisfies DestinationSlug,
     tagline: "Temples, culture & heritage",
     image:
       "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&q=80&auto=format&fit=crop",
+    description:
+      "Nepal’s capital is more than a gateway: ornate durbar squares, Buddhist stupas, and labyrinthine alleyways reveal centuries of art and devotion. Blend guided heritage walks with mountain flights toward Everest, hillside sunrises in Nagarkot, and leisurely coffee stops in bustling Thamel before you head deeper into the country.",
   },
   {
     name: "Pokhara",
-    slug: "pokhara",
+    slug: "pokhara" satisfies DestinationSlug,
     tagline: "Lakes, Annapurna views & calm",
     image:
       "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=1200&q=80&auto=format&fit=crop",
+    description:
+      "Phewa Lake reflects Machhapuchhre on clear mornings—this is Nepal’s Lakeside sanctuary. Paddle at sunrise, soar on a paragliding glide path, circle the Peace Pagoda, or use Pokhara as the launchpad for gentler Annapurna foothill walks and viewpoints like Sarangkot.",
   },
   {
     name: "Chitwan",
-    slug: "chitwan",
+    slug: "chitwan" satisfies DestinationSlug,
     tagline: "Jungle safaris & wildlife",
     image:
-      "https://images.unsplash.com/photo-1551632811-561732d1e58f?w=1200&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1589656966895-2f33e7653819?w=1200&q=80&auto=format&fit=crop",
+    description:
+      "Chitwan’s lowlands feel worlds apart from snowline trails. Elephant grass, hardwood forest, and the Rapti river frame safari drives and canoe outings where rhinos, deer, crocodiles—and with luck—the Bengal tiger may appear. It’s ideal after a trek when you crave warmth, wildlife, and slower afternoons.",
   },
   {
     name: "Annapurna",
-    slug: "annapurna",
+    slug: "annapurna" satisfies DestinationSlug,
     tagline: "Classic treks & village trails",
     image:
       "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80&auto=format&fit=crop",
+    description:
+      "The Annapurna massif offers some of Nepal’s most varied trekking—from short Ghorepani–Poon Hill sunrises to the full Annapurna Circuit over Thorung La. Tea houses dot rhododendron forests and high pastures; Gurung and Manangi villages lend warmth, dal bhat dinners, and stories between days on the trail.",
   },
 ] as const;
 
@@ -138,20 +163,29 @@ export const TESTIMONIALS = [
   },
 ] as const;
 
-export const TEAM = {
-  founder: {
-    name: "Rajesh Thapa",
-    role: "Founder & Lead Guide",
-    bio: "Born in Solukhumbu, Rajesh has led treks across Nepal for over a decade. He started Easy Travel Nepal to offer honest, locally rooted journeys — the kind he wished existed when family visited from abroad.",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80&auto=format&fit=crop",
+export const HOMEPAGE_TRUST_CAROUSEL_SLIDES = [
+  {
+    kind: "partner" as const,
+    id: "himalayan-circuit",
+    name: "Himalayan Circuit",
+    tagline: "Nepal destination management & trekking operator",
+    description:
+      "Licensed ground partner for itineraries, logistics, permits, and expert-led treks—from classic teahouse routes to cultural circuits. We collaborate closely so every departure meets the same standards we’d choose for family and friends.",
+    logoUrl: "https://himalayancircuit.com/images/Company/logo.png",
+    href: "https://himalayancircuit.com/",
+    linkLabel: "Visit partner site",
   },
-  highlights: [
-    "Licensed trekking guides & insured operations",
-    "Small groups and private departures",
-    "Partnerships with community lodges",
-  ],
-} as const;
+  {
+    kind: "atol" as const,
+    id: "atol-protection",
+    name: "ATOL financial protection",
+    tagline: "Peace of mind for qualifying bookings",
+    description:
+      "Where your trip is booked as an ATOL-protected flight-inclusive package arranged through an ATOL holder, you benefit from statutory protection if an airline fails or ceases trading. We’ll explain how this applies before you confirm and pay—we’re transparent every step.",
+    href: "https://www.caa.co.uk/atol-protection",
+    linkLabel: "How ATOL works (Civil Aviation Authority)",
+  },
+] as const;
 
 export const FAQ_ITEMS = [
   {

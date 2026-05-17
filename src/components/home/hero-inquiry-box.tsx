@@ -1,28 +1,25 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { getWhatsAppUrl } from "@/lib/site-config";
-
-const TRIP_TYPES = [
-  "Trekking",
-  "Culture & heritage",
-  "Wildlife",
-  "Family trip",
-  "Custom itinerary",
-];
+import {
+  formatDurationLabel,
+  INQUIRY_DURATION_BANDS,
+  INQUIRY_TRIP_TYPES,
+} from "@/lib/inquiry-plan-options";
 
 export function HeroInquiryBox() {
+  const router = useRouter();
   const [tripType, setTripType] = useState("");
   const [duration, setDuration] = useState("");
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const parts = [
-      "Hi! I'd like help planning a trip to Nepal.",
-      tripType && `Trip type: ${tripType}`,
-      duration && `Duration: ${duration} days`,
-    ].filter(Boolean);
-    window.open(getWhatsAppUrl(parts.join("\n")), "_blank", "noopener,noreferrer");
+    const params = new URLSearchParams();
+    if (tripType) params.set("trip_type", tripType);
+    if (duration) params.set("duration", duration);
+    const q = params.toString();
+    router.push(q ? `/plan?${q}` : "/plan");
   }
 
   return (
@@ -44,7 +41,7 @@ export function HeroInquiryBox() {
             className="w-full rounded-xl border border-charcoal-200 bg-white px-3 py-2.5 text-sm text-charcoal-900 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20"
           >
             <option value="">Trip type</option>
-            {TRIP_TYPES.map((t) => (
+            {INQUIRY_TRIP_TYPES.map((t) => (
               <option key={t} value={t}>
                 {t}
               </option>
@@ -59,9 +56,9 @@ export function HeroInquiryBox() {
             className="w-full rounded-xl border border-charcoal-200 bg-white px-3 py-2.5 text-sm text-charcoal-900 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20"
           >
             <option value="">Duration</option>
-            {["5–7", "8–12", "13–18", "19+"].map((d) => (
+            {INQUIRY_DURATION_BANDS.map((d) => (
               <option key={d} value={d}>
-                {d} days
+                {formatDurationLabel(d)}
               </option>
             ))}
           </select>
