@@ -7,11 +7,12 @@ import { InquiryCtaSection } from "@/components/home/inquiry-cta-section";
 import { TeamSection } from "@/components/home/team-section";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { WhyBookSection } from "@/components/home/why-book-section";
+import { getFeaturedTrips } from "@/lib/trip-catalog";
 import { getTrips } from "@/lib/symfony-api";
 
 export default async function HomePage() {
   const { items } = await getTrips();
-  const featured = items.slice(0, 6);
+  const featured = getFeaturedTrips(items, 6);
 
   return (
     <>

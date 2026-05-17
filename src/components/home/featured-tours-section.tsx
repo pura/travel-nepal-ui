@@ -12,8 +12,8 @@ export function FeaturedToursSection({ trips }: { trips: PublicTrip[] }) {
           <div id="featured-tours-heading">
             <SectionHeading
               eyebrow="Curated journeys"
-              title="Featured tours"
-              description="Handpicked routes with clear day-by-day plans — customize any itinerary to match your group."
+              title="Featured tours & trips"
+              description="Classic Annapurna and Everest treks, Upper Mustang, valley culture, and Lumbini—handpicked routes with clear day-by-day plans."
             />
           </div>
           <Link

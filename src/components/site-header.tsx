@@ -6,7 +6,7 @@ import { ButtonLink } from "@/components/ui/button";
 import { getWhatsAppUrl, SITE } from "@/lib/site-config";
 
 const links = [
-  { href: "/trips", label: "Tours" },
+  { href: "/trips", label: "Tours and Trips" },
   { href: "/#destinations-heading", label: "Destinations" },
   { href: "/#why-book-heading", label: "Why us" },
   { href: "/#plan-trip", label: "Plan trip" },

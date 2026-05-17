@@ -109,7 +109,7 @@ export const TESTIMONIALS = [
   {
     name: "James & Priya Chen",
     location: "Singapore",
-    trip: "Best of Nepal Tour",
+    trip: "Highlights of Nepal Tour",
     quote:
       "We wanted culture without rushing — they redesigned the itinerary around our kids. Transparent pricing and brilliant guides.",
     image:
@@ -179,6 +179,17 @@ export const FAQ_ITEMS = [
 /** Tags shown on featured tour cards (mapped by slug or index) */
 export const TRIP_FEATURE_TAGS: Record<string, string[]> = {
   "everest-base-camp-trek": ["Best Seller", "Challenging"],
-  "best-of-nepal-tour": ["Family Friendly", "Private Tour"],
-  "luxury-annapurna-trek": ["Premium", "Private Tour"],
+  "annapurna-circuit-trek-classic-trek": ["Trekking", "Classic Circuit"],
+  "the-royal-annapurna-trekking": ["Easy Trek", "Off the Beaten Path"],
+  "mardi-himal-base-camp-trek": ["Ridgeline Trek", "Annapurna Views"],
+  "upper-mustang-trek-hidden-kingdom": ["Restricted Area", "Tibetan Culture"],
+  "ghandruk-landruk-annapurna-trek-experience": ["Family Friendly", "Gurung Villages"],
+  "langtang-valley-with-gosaikunda-trek": ["Langtang", "Sacred Lakes"],
+  "chisapani-helambu-trek-itinerary-cost": ["Short Trek", "Near Kathmandu"],
+  "pikey-base-camp-trek-everest-view": ["Everest Views", "Pikey Peak"],
+  "ebc-trek-with-gokyo-lake-trekking": ["EBC + Gokyo", "Best Seller"],
+  "highlights-of-nepal-tour": ["Classic Tour", "Wildlife & Culture"],
+  "nepal-round-trip": ["Round Trip", "Family Friendly"],
+  "monk-for-a-month-nepal": ["Spiritual Journey", "Monastery Stay"],
+  "lumbini-pokhara-tour": ["Pilgrimage", "Lakes & Himalaya"],
 };

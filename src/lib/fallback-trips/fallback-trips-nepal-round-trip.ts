@@ -1,0 +1,257 @@
+import type { PublicTrip } from "@/types/trip";
+
+const MAP_URL = "https://himalayancircuit.com/images/map/Group%20277.png";
+const HERO_URL =
+  "https://himalayancircuit.com/storage/media/kathmandu-cultural-tour1.webp";
+
+export const FALLBACK_TRIP_NEPAL_ROUND_TRIP: PublicTrip = {
+  id: 26,
+  slug: "nepal-round-trip",
+  title: "Nepal Round Trip",
+  summary:
+    "Nine days through Patan and Kathmandu’s sacred sites, two nights of Chitwan jungle adventure, Pokhara lakes and Sarangkot sunrises, Peace Stupa and Tibetan refugee camp—with a farewell cultural dinner.",
+  description:
+    "Our guided round tour to Kathmandu, Chitwan, and Pokhara offers deeper insight into Nepal’s Hindu, Buddhist, and Tibetan heritage—from Patan Durbar Square and Krishna Temple to Pashupatinath and Boudhanath. Continue to Chitwan National Park for village walks, Tharu cultural dance, jeep safari, canoe rides, and bird watching among rhinos and tigers. In Pokhara, witness Sarangkot’s spectacular sunrise over the western Himalayas, boat to Tal Barahi temple, visit Davis Falls and Gupteshwor Cave, hike to the World Peace Stupa, and learn about Tibetan refugee life. Fly back to Kathmandu for a farewell dinner with Nepalese cultural dance. Ideal for travelers seeking meaningful cultural immersion and diverse landscapes from jungle to Himalayan foothills.",
+  durationDays: 9,
+  tripType: "cultural_heritage",
+  budgetLevel: "mid_range",
+  comfortLevel: "standard",
+  difficultyLevel: "easy",
+  interestTags: [
+    "kathmandu",
+    "chitwan",
+    "pokhara",
+    "culture",
+    "wildlife",
+    "heritage",
+    "safari",
+    "lakes",
+    "sarangkot",
+    "peace-stupa",
+  ],
+  priceFrom: { amount: "1369", currency: "USD" },
+  imageUrl: HERO_URL,
+  startingRegion: { slug: "kathmandu-valley", name: "Kathmandu Valley" },
+  totalDistanceKm: 384,
+  altitudeMaxM: 1600,
+  altitudeMinM: 415,
+  routeGrades: ["Grade A (an easy endeavour)"],
+  fitnessNotes: ["Aerobic fitness"],
+  recommendedSeasons: ["All year round"],
+  mapImageUrl: MAP_URL,
+  galleryImageUrls: [HERO_URL, MAP_URL],
+  sourceReferenceUrl:
+    "https://himalayancircuit.com/tour/nepal-round-trip",
+  priceTable: {
+    currency: "USD",
+    supplementaryChargePercent: 30,
+    footnote:
+      "Indicative per-person pricing for the services described in this offer. Cost varies with customization. International flights are not included. Deluxe package includes Pokhara–Kathmandu flight.",
+    columns: [
+      { key: "2", label: "2 travellers" },
+      { key: "4", label: "4 travellers" },
+      { key: "8", label: "8 travellers" },
+    ],
+    rows: [
+      {
+        label: "Standard",
+        prices: { "2": "1559", "4": "1429", "8": "1369" },
+      },
+      {
+        label: "Deluxe",
+        prices: { "2": "1899", "4": "1759", "8": "1599" },
+      },
+    ],
+  },
+  bookingFeeItems: [
+    "Entrance fee",
+    "National Park fee",
+  ],
+  gearChecklist: [
+    "Backpack",
+    "First-aid kit",
+    "Sandals",
+    "Rain jacket",
+    "Plug adapter (if needed)",
+    "Travel towels",
+    "Sunglasses / sun hat",
+    "Sun block",
+    "Lip balm",
+    "Insect repellent",
+    "Personal medicines",
+    "T-shirts",
+  ],
+  trekkingGradeNotes:
+    "A cultural and wildlife tour with short hikes—no high-altitude trekking. Light layers suit Chitwan heat and Sarangkot mornings.",
+  faq: [
+    {
+      question: "Is Nepal a safe destination for tourists?",
+      answer:
+        "Nepal is generally peaceful and locals are welcoming. Stay aware in unfamiliar areas, as you would when traveling anywhere.",
+    },
+    {
+      question: "What currency is used in Nepal?",
+      answer:
+        "The Nepalese Rupee (NPR) is official. ATMs are available in Kathmandu and Pokhara; carry cash for smaller towns and tips.",
+    },
+  ],
+  reviewSnippets: [
+    { name: "Christopher", location: "UK", date: "2026-04-20" },
+    { name: "David", location: "Australia", date: "2026-04-09" },
+    { name: "Mathis & Ida", location: "Germany", date: "2026-04-06" },
+    { name: "Paul & Tim", location: "Germany", date: "2026-03-25" },
+    { name: "Claudia", location: "Germany", date: "2026-03-18" },
+  ],
+  services: {
+    included: [
+      "Airport transfers to and from the hotel",
+      "Twin/double room accommodation with breakfast in Kathmandu and Pokhara",
+      "Entrance fees to monuments, temples, park, and Chitwan activities as per itinerary",
+      "Cultural tour guide in Kathmandu and Pokhara; nature guide at Chitwan during safari",
+      "Private vehicle for Kathmandu–Chitwan, Kathmandu tour, and Pokhara tour",
+      "Full meal plan during Chitwan stay",
+      "Pokhara–Kathmandu 30-minute flight",
+      "Government tax",
+    ],
+    excluded: [
+      "Bar bills, laundry, phone or SIM card, and services not mentioned in the itinerary",
+      "Personal, medical, and travel insurance",
+      "Nepal visa fee",
+      "Lunch and dinner in Kathmandu and Pokhara (except farewell dinner)",
+      "Gratuity to staff",
+    ],
+    optional: [
+      "Deluxe package upgrades",
+      "Extra nights in Kathmandu or Pokhara",
+      "Adventure sports in Pokhara",
+    ],
+  },
+  days: [
+    {
+      dayNumber: 1,
+      title: "Arrival in Kathmandu",
+      description: "Welcome to Nepal",
+      details:
+        "Meet at the airport and transfer to your hotel in central Kathmandu. Evening dinner with your travel expert to preview the journey ahead.",
+      destinationName: "Kathmandu",
+      distanceKm: 5,
+      altitudeMaxM: 1400,
+      altitudeMinM: 1400,
+      durationHours: 0.5,
+      accommodation: "Hotel",
+      meals: "As arranged",
+    },
+    {
+      dayNumber: 2,
+      title: "Patan Durbar Square, Pashupatinath and Boudhanath",
+      description: "Guided cultural tour",
+      details:
+        "Explore Patan’s Krishna Temple, Mahaboudha, and palace courtyards, then Pashupatinath on the Bagmati River and Boudhanath—the world’s largest stupa in the valley with prayer wheels and Buddha images.",
+      destinationName: "Kathmandu",
+      distanceKm: 20,
+      altitudeMaxM: 1400,
+      altitudeMinM: 1400,
+      durationHours: 6,
+      accommodation: "Hotel",
+      meals: "Breakfast",
+    },
+    {
+      dayNumber: 3,
+      title: "Kathmandu to Chitwan",
+      description: "Into the jungle",
+      details:
+        "Scenic drive to Chitwan with valley views from the hilltops. Lunch on arrival, then village walk, sunset view, and Tharu cultural dance at one of Asia’s finest national parks.",
+      destinationName: "Chitwan",
+      distanceKm: 137,
+      altitudeMaxM: 415,
+      altitudeMinM: 1400,
+      durationHours: 6,
+      accommodation: "Hotel",
+      meals: "Breakfast, lunch, dinner",
+    },
+    {
+      dayNumber: 4,
+      title: "Chitwan wildlife and jungle activities",
+      description: "Safari day",
+      details:
+        "Jeep safari (~4 hours), canoe ride, bird watching, and jungle walk with naturalist guides—full board at the lodge.",
+      destinationName: "Chitwan",
+      distanceKm: 20,
+      altitudeMaxM: 415,
+      altitudeMinM: 415,
+      durationHours: 5,
+      accommodation: "Hotel",
+      meals: "Breakfast, lunch, dinner",
+    },
+    {
+      dayNumber: 5,
+      title: "Chitwan to Pokhara",
+      description: "Lake city relaxation",
+      details:
+        "Scenic drive to Pokhara, gateway to the Annapurna range on Phewa Lake—time to relax lakeside before sightseeing days ahead.",
+      destinationName: "Pokhara",
+      distanceKm: 142,
+      altitudeMaxM: 822,
+      altitudeMinM: 415,
+      durationHours: 6,
+      accommodation: "Hotel",
+      meals: "Breakfast",
+    },
+    {
+      dayNumber: 6,
+      title: "Sarangkot sunrise, Tal Barahi, Davis Falls and Gupteshwor Cave",
+      description: "Pokhara highlights",
+      details:
+        "Pre-dawn drive to Sarangkot for Annapurna, Manaslu, Dhaulagiri, and Machhapuchhre views, hike down for breakfast, then boat to Tal Barahi temple, Davis Falls, and Gupteshwor Cave.",
+      destinationName: "Pokhara",
+      distanceKm: 35,
+      altitudeMaxM: 1600,
+      altitudeMinM: 822,
+      durationHours: 5,
+      accommodation: "Hotel",
+      meals: "Breakfast",
+    },
+    {
+      dayNumber: 7,
+      title: "Peace Stupa and Tibetan refugee camp",
+      description: "Culture and views",
+      details:
+        "Boat across Phewa Lake and hike to World Peace Stupa for Annapurna panoramas, then visit a Tibetan refugee camp to learn daily life and support handmade crafts.",
+      destinationName: "Pokhara",
+      distanceKm: 15,
+      altitudeMaxM: 1100,
+      altitudeMinM: 822,
+      durationHours: 5,
+      accommodation: "Hotel",
+      meals: "Breakfast",
+    },
+    {
+      dayNumber: 8,
+      title: "Fly Pokhara to Kathmandu — farewell dinner",
+      description: "Return to the capital",
+      details:
+        "Leisurely morning lakeside, then afternoon flight to Kathmandu. Evening farewell dinner with Nepalese cultural dance.",
+      destinationName: "Kathmandu",
+      distanceKm: 5,
+      altitudeMaxM: 1400,
+      altitudeMinM: 822,
+      durationHours: 0.5,
+      accommodation: "Hotel",
+      meals: "Breakfast, dinner",
+    },
+    {
+      dayNumber: 9,
+      title: "Departure from Kathmandu",
+      description: "Farewell",
+      details:
+        "Transfer to Tribhuvan International Airport after breakfast for your onward flight with memories of temples, jungle, lakes, and mountains.",
+      destinationName: "Kathmandu",
+      distanceKm: 5,
+      altitudeMaxM: 1400,
+      altitudeMinM: 1400,
+      durationHours: 0.5,
+      accommodation: "N/A",
+      meals: "Breakfast",
+    },
+  ],
+};

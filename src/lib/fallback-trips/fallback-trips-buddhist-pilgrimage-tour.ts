@@ -1,0 +1,243 @@
+import type { PublicTrip } from "@/types/trip";
+
+const MAP_URL = "https://himalayancircuit.com/images/map/Group%20277.png";
+const HERO_URL =
+  "https://himalayancircuit.com/storage/media/kathmandu-cultural-tour1.webp";
+
+export const FALLBACK_TRIP_BUDDHIST_PILGRIMAGE_TOUR: PublicTrip = {
+  id: 6,
+  slug: "buddhist-pilgrimage-tour",
+  title: "Buddhist Pilgrimage Tour",
+  summary:
+    "Eight days through Kathmandu’s UNESCO Buddhist and Hindu heritage, meditation at Namo Buddha monastery, Lumbini’s sacred garden—the birthplace of Buddha—and Pharping with Swayambhunath.",
+  description:
+    "This Buddhist Pilgrimage tour offers spiritual, cultural, and natural experience across medieval Kathmandu, Namo Buddha, and Lumbini. Visit Boudhanath—the world’s largest stupa in the valley—and Pashupatinath on the Bagmati River, then retreat to Namo Buddha for meditation amid lotus-shaped landscapes and Himalayan views. Fly to Lumbini, where Prince Siddhartha Gautama was born in 623 BC, explore the Sacred Garden, Maya Devi Temple, and Ashoka pillar, and continue with Pharping’s Padmasambhava caves and Swayambhunath hilltop stupa. Monastery and hotel stays blend reflection with guided insight into Nepal’s living Buddhist and Hindu traditions.",
+  durationDays: 8,
+  tripType: "spiritual_pilgrimage",
+  budgetLevel: "premium",
+  comfortLevel: "standard",
+  difficultyLevel: "easy",
+  interestTags: [
+    "spiritual_pilgrimage",
+    "buddhism",
+    "lumbini",
+    "namo-buddha",
+    "culture",
+    "heritage",
+    "meditation",
+    "stupa",
+    "pharping",
+  ],
+  priceFrom: { amount: "1735", currency: "USD" },
+  imageUrl: HERO_URL,
+  startingRegion: { slug: "kathmandu-valley", name: "Kathmandu Valley" },
+  totalDistanceKm: 674,
+  altitudeMaxM: 1750,
+  altitudeMinM: 150,
+  routeGrades: ["Grade A (an easy endeavour)"],
+  fitnessNotes: ["Aerobic fitness"],
+  recommendedSeasons: ["All year round"],
+  mapImageUrl: MAP_URL,
+  galleryImageUrls: [HERO_URL, MAP_URL],
+  sourceReferenceUrl:
+    "https://himalayancircuit.com/tour/buddhist-pilgrimage-tour",
+  priceTable: {
+    currency: "USD",
+    supplementaryChargePercent: 30,
+    footnote:
+      "Indicative per-person pricing for the services described in this offer. Cost varies with customization. International flights are not included. Deluxe package includes domestic flights as per itinerary.",
+    columns: [
+      { key: "2", label: "2 travellers" },
+      { key: "4", label: "4 travellers" },
+      { key: "8", label: "8 travellers" },
+    ],
+    rows: [
+      {
+        label: "Standard",
+        prices: { "2": "1951", "4": "1855", "8": "1735" },
+      },
+      {
+        label: "Deluxe",
+        prices: { "2": "2194", "4": "2098", "8": "1978" },
+      },
+    ],
+  },
+  bookingFeeItems: [
+    "Entrance fee",
+    "Lumbini — birthplace of Buddha visit",
+    "Immerse with Buddhism culture",
+  ],
+  gearChecklist: [
+    "Backpack",
+    "T-shirts",
+    "First-aid kit",
+    "Sandals",
+    "Rain jacket",
+    "Travel towels",
+    "Sunglasses / sun hat",
+    "Sun block",
+    "Lip balm",
+    "Insect repellent",
+    "Personal medicines",
+    "Thermal bottle",
+  ],
+  trekkingGradeNotes:
+    "A pilgrimage and cultural tour with short drives and gentle walks—no high-altitude trekking. Modest dress is appreciated at temples and monasteries.",
+  faq: [
+    {
+      question: "What should I pack for my trip to Nepal?",
+      answer:
+        "Pack layers for valley and Terai climates, comfortable walking shoes, rain gear, sun protection, and any personal medicines. Monastery stays may be cooler in the evenings.",
+    },
+    {
+      question: "When is the best time to travel to Nepal?",
+      answer:
+        "Autumn (September–November) and spring (March–May) offer clear skies and mild temperatures—ideal for pilgrimage sightseeing year-round routes like this tour.",
+    },
+  ],
+  reviewSnippets: [
+    { name: "Christopher", location: "UK", date: "2026-04-20" },
+    { name: "David", location: "Australia", date: "2026-04-09" },
+    { name: "Mathis & Ida", location: "Germany", date: "2026-04-06" },
+    { name: "Paul & Tim", location: "Germany", date: "2026-03-25" },
+    { name: "Claudia", location: "Germany", date: "2026-03-18" },
+  ],
+  services: {
+    included: [
+      "All airport transfers",
+      "Seven nights twin-sharing hotel accommodation with breakfast",
+      "English-speaking tour guide in Kathmandu and Lumbini",
+      "Entrance fees to temples, stupas, and monuments",
+      "Kathmandu–Bhairawa domestic flight",
+      "Tricycle tour in Lumbini garden",
+      "Lumbini to Kathmandu tourist bus",
+      "All city tours by private vehicle",
+      "Government tax",
+    ],
+    excluded: [
+      "Personal insurance and expenses",
+      "Natural calamities beyond our control and rescue expenses",
+      "Lunch and dinner in Kathmandu, Namo Buddha, and Lumbini",
+      "Gratuity to staff",
+    ],
+    optional: [
+      "Deluxe package with upgraded transport",
+      "Extra meditation sessions",
+      "Mountain flight from Kathmandu",
+    ],
+  },
+  days: [
+    {
+      dayNumber: 1,
+      title: "Arrive in Kathmandu",
+      description: "Welcome to Nepal",
+      details:
+        "Land at Tribhuvan International Airport with Himalayan views, meet your representative, and transfer to a centrally located hotel. Rest and recover from jet lag in the medieval capital of three royal cities and seven UNESCO World Heritage sites.",
+      destinationName: "Kathmandu",
+      distanceKm: 5,
+      altitudeMaxM: 1400,
+      altitudeMinM: 1400,
+      durationHours: 0.5,
+      accommodation: "Hotel",
+      meals: "As arranged",
+    },
+    {
+      dayNumber: 2,
+      title: "Kathmandu city tour — drive to Namo Buddha",
+      description: "Stupas and sacred river",
+      details:
+        "Visit Boudhanath—the world’s largest stupa in the valley—with prayer wheels and Buddha images, then Pashupatinath on the Bagmati River. Evening drive to Namo Buddha monastery for an overnight stay.",
+      destinationName: "Namo Buddha",
+      distanceKm: 43,
+      altitudeMaxM: 1750,
+      altitudeMinM: 1400,
+      durationHours: 2,
+      accommodation: "Monastery",
+      meals: "Breakfast",
+    },
+    {
+      dayNumber: 3,
+      title: "Namo Buddha visit and meditation",
+      description: "Pilgrimage hilltop",
+      details:
+        "Spend the day at Namo Buddha, about forty kilometres from Boudhanath—a peaceful site where the landscape resembles an eight-petaled lotus, with emerald groves and snow-capped peaks on the horizon. Time for meditation and reflection.",
+      destinationName: "Namo Buddha",
+      distanceKm: 0,
+      altitudeMaxM: 1750,
+      altitudeMinM: 1750,
+      durationHours: 0,
+      accommodation: "Monastery",
+      meals: "Breakfast",
+    },
+    {
+      dayNumber: 4,
+      title: "Namo Buddha — fly to Lumbini",
+      description: "Birthplace of Buddha",
+      details:
+        "Early departure from Namo Buddha and fly to Lumbini in the Terai plains—one of Buddhism’s greatest pilgrimage sites where Prince Siddhartha Gautama was born in 623 BC, now a UNESCO World Heritage Site.",
+      destinationName: "Lumbini",
+      distanceKm: 328,
+      altitudeMaxM: 150,
+      altitudeMinM: 1750,
+      durationHours: 10,
+      accommodation: "Hotel",
+      meals: "Breakfast",
+    },
+    {
+      dayNumber: 5,
+      title: "Lumbini city tour",
+      description: "Sacred garden",
+      details:
+        "Explore Lumbini’s Sacred Garden, Maya Devi Temple, and Ashoka’s commemorative pillar from 249 BC—among the four great pilgrimage sites linked to the Buddha’s life, alongside Kushinagar, Bodh Gaya, and Sarnath.",
+      destinationName: "Lumbini",
+      distanceKm: 0,
+      altitudeMaxM: 150,
+      altitudeMinM: 150,
+      durationHours: 0,
+      accommodation: "Hotel",
+      meals: "Breakfast",
+    },
+    {
+      dayNumber: 6,
+      title: "Drive back to Kathmandu",
+      description: "Return to the valley",
+      details:
+        "After breakfast, drive or fly back to Kathmandu and transfer to your hotel with time to rest before the final valley tours.",
+      destinationName: "Kathmandu",
+      distanceKm: 289,
+      altitudeMaxM: 1400,
+      altitudeMinM: 150,
+      durationHours: 9,
+      accommodation: "Hotel",
+      meals: "Breakfast",
+    },
+    {
+      dayNumber: 7,
+      title: "Pharping and Swayambhunath city tour",
+      description: "Caves and monkey temple",
+      details:
+        "Visit Pharping’s ancient Newari town, Asura Cave where Guru Padmasambhava attained enlightenment, and Sheshnarayan Cave, then Swayambhunath hilltop stupa for valley panoramas and religious harmony. Evening traditional Nepalese dinner.",
+      destinationName: "Kathmandu",
+      distanceKm: 4,
+      altitudeMaxM: 1400,
+      altitudeMinM: 1400,
+      durationHours: 0.5,
+      accommodation: "Hotel",
+      meals: "Breakfast, dinner",
+    },
+    {
+      dayNumber: 8,
+      title: "Airport transfer — departure",
+      description: "Farewell",
+      details:
+        "Transfer to Tribhuvan International Airport after breakfast for your flight home with memories of temples, Lumbini, and Namo Buddha.",
+      destinationName: "Kathmandu",
+      distanceKm: 5,
+      altitudeMaxM: 1400,
+      altitudeMinM: 1400,
+      durationHours: 0.5,
+      accommodation: "N/A",
+      meals: "Breakfast",
+    },
+  ],
+};
