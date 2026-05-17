@@ -11,7 +11,7 @@ export function StickyMobileCta() {
           href="/plan"
           className="flex-1 rounded-full bg-brand-700 py-3 text-center text-sm font-semibold text-white"
         >
-          Plan Your Trip
+          Plan your trip
         </Link>
         <a
           href={getWhatsAppUrl()}

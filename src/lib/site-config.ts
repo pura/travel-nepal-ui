@@ -2,12 +2,23 @@
 
 export const SITE = {
   name: "Easy Travel Nepal",
-  tagline: "Authentic journeys, crafted by locals",
+  tagline: "UK-based Nepal trekking specialists — Himalayan expertise delivered by trusted local partners.",
+  /** Single-line strapline next to logo and in snippets */
+  brandSlogan: "Guided in Nepal . Planned in the UK",
   url: "https://www.easytravelnepal.com",
   email: "info@easytravelnepal.com",
+  /** Nepal operations coordination */
   phone: "+977 1 4423456",
-  address: "Thamel, Kathmandu, Nepal",
+  address: "Operations: Thamel, Kathmandu, Nepal",
+  /** Editorial positioning — augment with registrar details when validated */
+  ukRegistrationNote:
+    "Easy Travel Nepal is a UK-arranged Himalayan trekking specialist: British continuity for quotations, escalation, briefing, revisions—synced with vetted Kathmandu operators delivering Everest-region, Annapurna, Langtang, Mustang & customised Nepal trekking programmes on the ground.",
+  /** Narrow ATOL reference for flight-inclusive statutory packages only */
+  atolTransparencyLine:
+    "Where UK law mandates ATOL for a packaged flight-inclusive holiday, applicability is clarified before you commit. Most itineraries isolate Himalayan logistics while travellers secure long-haul seats independently.",
 } as const;
+
+export const SITE_SLOGAN = SITE.brandSlogan;
 
 export function getWhatsAppUrl(message?: string): string {
   const number =
@@ -19,40 +30,58 @@ export function getWhatsAppUrl(message?: string): string {
 
 export const TRUST_BADGES = [
   { label: "Local Experts", icon: "compass" },
-  { label: "500+ Travelers", icon: "users" },
-  { label: "Custom Tours", icon: "map" },
+  { label: "UK Based Support", icon: "users" },
+  { label: "Custom Tours", icon: "route" },
   { label: "24/7 Support", icon: "headset" },
 ] as const;
 
 export const WHY_BOOK = [
   {
-    title: "Local Experts",
-    description: "Guides born and raised in the Himalayas who know every trail and temple.",
+    title: "UK booking & accountability",
+    description:
+      "Plan and pay through a British travel specialist with clear replies in your timezone—before departure and if anything needs resolving.",
+    icon: "users",
+  },
+  {
+    title: "Nepal trekking teams on the trail",
+    description:
+      "Licensed local guides who live the routes: acclimatisation, lodges, pacing, weather calls, and real mountain judgement.",
     icon: "compass",
   },
   {
-    title: "Personalized Itineraries",
-    description: "Trips shaped around your pace, interests, and travel style — not one-size-fits-all.",
+    title: "Truly personalised treks",
+    description:
+      "Everest Base Camp, Annapurna, Langtang—or a custom rhythm built around fitness, altitude comfort, rest days, and side trips.",
     icon: "route",
   },
   {
-    title: "Transparent Pricing",
-    description: "Clear inclusions and honest quotes before you commit — no hidden surprises.",
-    icon: "receipt",
+    title: "Airport meet & onward logistics",
+    description:
+      "Coordinated pickups, permits, transfers, and hotel nights so your first hours in Kathmandu feel effortless. You arrange flights; we own the Nepal ground.",
+    icon: "map",
   },
   {
-    title: "Flexible Travel",
-    description: "Adjust dates, add rest days, or extend your trek when plans shift.",
-    icon: "calendar",
+    title: "Safety-led mountain planning",
+    description:
+      "Conservative itineraries, communication protocols, evacuation awareness, and equipment checks—we don’t cut corners above the treeline.",
+    icon: "shield",
   },
   {
-    title: "Handpicked Hotels",
-    description: "Comfortable lodges and boutique stays we trust from Kathmandu to the mountains.",
+    title: "Trusted Kathmandu partners",
+    description:
+      "Long-standing logistics operator relationships with shared standards—not anonymous subcontracting.",
     icon: "bed",
   },
   {
-    title: "Fast Support",
-    description: "WhatsApp replies within hours — before, during, and after your trip.",
+    title: "No hidden trekking fees",
+    description:
+      "Written inclusions/exclusions upfront: permits, guide wages, lodges, transfers—what you approve is what you pay for.",
+    icon: "receipt",
+  },
+  {
+    title: "Responsive communication",
+    description:
+      "WhatsApp access to your planners and coordinators—typically within hours—evening UK time overlaps where it matters.",
     icon: "message",
   },
 ] as const;
@@ -168,45 +197,51 @@ export const HOMEPAGE_TRUST_CAROUSEL_SLIDES = [
     kind: "partner" as const,
     id: "himalayan-circuit",
     name: "Himalayan Circuit",
-    tagline: "Nepal destination management & trekking operator",
+    tagline: "Principal Nepal trekking & touring operator",
     description:
-      "Licensed ground partner for itineraries, logistics, permits, and expert-led treks—from classic teahouse routes to cultural circuits. We collaborate closely so every departure meets the same standards we’d choose for family and friends.",
+      "Our Kathmandu-ground partner manages permits, lodges, staffing, transports, teahouse relationships, and on-trail escalation—everything that turns a spreadsheet into a safe, memorable trek.",
     logoUrl: "https://himalayancircuit.com/images/Company/logo.png",
     href: "https://himalayancircuit.com/",
-    linkLabel: "Visit partner site",
+    linkLabel: "Visit Himalayan Circuit",
   },
   {
-    kind: "atol" as const,
-    id: "atol-protection",
-    name: "ATOL financial protection",
-    tagline: "Peace of mind for qualifying bookings",
+    kind: "positioning" as const,
+    id: "uk-nepal-model",
+    name: "UK standards. Himalayan delivery.",
+    tagline: "One booking relationship, seamless execution",
     description:
-      "Where your trip is booked as an ATOL-protected flight-inclusive package arranged through an ATOL holder, you benefit from statutory protection if an airline fails or ceases trading. We’ll explain how this applies before you confirm and pay—we’re transparent every step.",
-    href: "https://www.caa.co.uk/atol-protection",
-    linkLabel: "How ATOL works (Civil Aviation Authority)",
+      "You contract with Easy Travel Nepal in the UK for clarity and consumer confidence. Specialists in Kathmandu then execute—with the same trekking director checking permits, lodges, briefing notes, and guide assignments before your boots touch the trail.",
+    href: "/#uk-nepal-trust-heading",
+    linkLabel: "How we blend UK support & Nepal ops",
+    headerIcon: "shield" as const,
   },
 ] as const;
 
 export const FAQ_ITEMS = [
+  {
+    question: "Do you arrange international flights to Nepal?",
+    answer:
+      "Most guests book long-haul flights themselves so they can use miles, carriers they prefer, or flexible fares. Easy Travel Nepal focuses on onward Nepal logistics—airport meet-and-greet, Kathmandu hotels, domestic flights inside Nepal when needed (unless you prefer differently), trekking permits, teahouses, transfers, guides, and safety briefing. Tell us which flight you intend to arrive on and we build the trekking calendar around it.",
+  },
   {
     question: "How far in advance should I book a Nepal trip?",
     answer:
       "For peak trekking seasons (March–May and September–November), we recommend booking 2–3 months ahead. Custom itineraries can often be arranged sooner — contact us on WhatsApp for availability.",
   },
   {
-    question: "Do you offer fully customized private tours?",
+    question: "Do you offer fully customised private treks?",
     answer:
-      "Yes. Most of our travelers choose a published route as a starting point, then we tailor duration, hotels, pace, and add-ons to match your group.",
+      "Yes—most groups start from a published route and we adjust lodges, pacing, contingency nights, summit buffers, photographic layovers, family-friendly variants, pilgrimage add-ons or jungle codas. Brief us openly on fitness and altitude history from the UK; we align routing with what your body realistically tolerates.",
   },
   {
-    question: "What is included in the quoted price?",
+    question: "What is included in the quoted trekking price?",
     answer:
-      "Each trip page lists inclusions such as guides, permits, accommodation, and meals where applicable. We provide transparent breakdowns before you confirm — no hidden fees.",
+      "Each trekking page inventories guide wages, teahouses, permits/TIMS, Kathmandu handling, outlined meals/transfers/window seats on domestic hops when spelled out, contingency buffer nights if stated—and how payments split consultation vs Nepal execution invoices. Hidden fee culture doesn’t survive our quoting workflow.",
   },
   {
-    question: "Is it safe to trek in Nepal?",
+    question: "Is trekking in Nepal safe with your teams?",
     answer:
-      "With experienced guides, proper acclimatization, and up-to-date weather awareness, trekking is very manageable. We assess fitness levels during planning and never push beyond safe limits.",
+      "Altitude carries inherent risk—we phase acclimatisation, cap daily ascent sensibly, run wellness checks higher on the hill, rehearse contingency comms including helicopter escalation literacy, deploy senior Sherpa-leading teams matched to itinerary grade, transparently reschedule when instability spikes. Candour beats bravado: we downgrade objectives before reckless optimism gambles guests.",
   },
 ] as const;
 

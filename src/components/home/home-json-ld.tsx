@@ -1,27 +1,47 @@
-import { SITE, getWhatsAppUrl } from "@/lib/site-config";
+import { SITE, SITE_SLOGAN, getWhatsAppUrl } from "@/lib/site-config";
 
 export function HomeJsonLd() {
   const data = {
     "@context": "https://schema.org",
     "@type": "TravelAgency",
+    "@id": `${SITE.url}#agency`,
     name: SITE.name,
+    slogan: SITE_SLOGAN,
     url: SITE.url,
     description:
-      "Premium Nepal tours and treks — custom itineraries crafted by local experts.",
+      "UK-arranged Himalayan trekking specialist coordinating Everest-region, Annapurna, Langtang, Mustang treks—and bespoke Nepal trekking holidays via trusted Kathmandu-ground partners.",
+    areaServed: [
+      {
+        "@type": "AdministrativeArea",
+        name: "United Kingdom",
+        containedInPlace: { "@type": "Country", name: "United Kingdom" },
+      },
+      {
+        "@type": "Country",
+        name: "Nepal",
+      },
+    ],
     address: {
       "@type": "PostalAddress",
       addressLocality: "Kathmandu",
       addressCountry: "NP",
-      streetAddress: SITE.address,
+      streetAddress: SITE.address.replace(/^Operations:\s*/i, ""),
     },
-    telephone: SITE.phone,
     email: SITE.email,
-    sameAs: [getWhatsAppUrl()],
+    telephone: SITE.phone,
+
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.9",
       reviewCount: "120",
     },
+    sameAs: [getWhatsAppUrl()],
+    knowsAbout: [
+      "Everest Base Camp trekking",
+      "Annapurna trekking",
+      "Nepal trekking company UK",
+      "Nepal adventure travel",
+    ],
   };
 
   return (

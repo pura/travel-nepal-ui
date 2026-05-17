@@ -120,6 +120,7 @@ const ICON_MAP = {
   calendar: IconCalendar,
   bed: IconBed,
   message: IconMessage,
+  shield: IconShieldCheck,
 } as const;
 
 export type IconName = keyof typeof ICON_MAP;

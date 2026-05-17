@@ -28,26 +28,29 @@ export function PlanTripInquirySection({
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-200">
-              Custom itineraries
+              Free itinerary request
             </p>
             <h2
               id="plan-trip-heading"
               className="mt-3 font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl"
             >
-              Get a free custom itinerary within 24 hours
+              Get a suggested plan back within one working day.
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-brand-100">
-              Tell us your dates, interests, and travel style. Our Kathmandu team will
-              craft a personalized plan — no obligation, no spam.
+              Tell us where you&apos;d like to go (Everest area, Annapurna, Mustang, or a trekking-and-culture mix),
+              roughly when, and whether you prefer an easier pace or longer days on the trail. We&apos;ll outline what fits,
+              what it might cost, and how our UK desk and Nepal team handle guides, permits, lodges, and transfers. Ask us
+              anything — if we&apos;re not right for your trip, we&apos;ll tell you plainly; there&apos;s no pressure to
+              book.
             </p>
             <a
-              href={getWhatsAppUrl("Hi! I'd like a free custom Nepal itinerary.")}
+              href={getWhatsAppUrl("I'd like trekking advice from Easy Travel Nepal (UK-arranged Nepal operations).")}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:bg-[#1fb855]"
             >
               <IconWhatsApp className="h-5 w-5" />
-              Chat on WhatsApp instead
+              WhatsApp a specialist
             </a>
           </div>
           <InquiryForm initialTripType={prefilledTripType} initialDuration={prefilledDuration} />

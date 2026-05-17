@@ -16,8 +16,9 @@ export function TestimonialsSection() {
       <Container>
         <div id="testimonials-heading">
           <SectionHeading
-            eyebrow="Testimonials"
-            title="Stories from the trail"
+            eyebrow="Field-proven teams"
+            title="What trekkers say once boots are off"
+            description="Long-haul hikers who wanted British booking clarity without surrendering Sherpa-led Himalayan craft—real pacing, candid risk calls, lodge standards that held up."
             align="center"
           />
         </div>

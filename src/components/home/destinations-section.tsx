@@ -13,9 +13,9 @@ export function DestinationsSection() {
           className="[&_.text-brand-600]:text-brand-300 [&_h2]:text-white [&_p]:text-white/75"
         >
           <SectionHeading
-            eyebrow="Destinations"
-            title="Where will your story begin?"
-            description="From Everest's shadow to Pokhara's lakes — explore Nepal's most iconic regions."
+            eyebrow="Geography anchors"
+            title="Nepal trekking regions mapped with precision"
+            description="Everest amphitheatre, Annapurna's teahouse lattice, Kathmandu heritage valleys, jungle Terai gateways—tap a pillar to inspect featured departures calibrated with local pacing intelligence."
             align="center"
           />
         </div>

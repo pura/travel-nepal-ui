@@ -22,16 +22,16 @@ const displayFont = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: `${SITE.name} — Custom Nepal Tours & Treks`,
+    default: `${SITE.name} — UK-arranged Himalayan trekking specialists`,
     template: `%s | ${SITE.name}`,
   },
   description:
-    "Premium Nepal travel experiences — Everest treks, cultural tours, and custom itineraries crafted by local experts. Get a free itinerary within 24 hours.",
+    "UK-based trekking company arranging Everest Base Camp trekking, Annapurna trekking & bespoke Nepal itineraries—Nepal-ground delivery through trusted Kathmandu partners, transparent quoting, disciplined safety culture.",
   metadataBase: new URL(SITE.url),
   openGraph: {
-    title: `${SITE.name} — Explore Nepal Beyond the Guidebooks`,
+    title: `${SITE.name} — Trek Nepal from the UK`,
     description:
-      "Handcrafted treks and tours with local guides. Transparent pricing, flexible travel, 24/7 WhatsApp support.",
+      "British booking clarity + Kathmandu operational muscle for Nepal trekking expeditions—with senior Sherpa-led guides, pragmatic pacing, audited logistics partners.",
     url: SITE.url,
     siteName: SITE.name,
     locale: "en_US",

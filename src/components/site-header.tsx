@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { type ReactNode, useEffect, useState } from "react";
 import { ButtonLink } from "@/components/ui/button";
 import { IconCalendar, IconRoute, IconStar, IconWhatsApp } from "@/components/ui/icons";
+import { BrandMark } from "@/components/brand-mark";
 import { getWhatsAppUrl, SITE } from "@/lib/site-config";
 
 type NavIcon = (props: { className?: string }) => JSX.Element;
@@ -73,6 +74,20 @@ function IconMenuClose({ className }: { className?: string }) {
   );
 }
 
+function SiteWordMark() {
+  const name = SITE.name;
+  const lastSpace = name.lastIndexOf(" ");
+  if (lastSpace <= 0) {
+    return <span className="text-brand-950">{name}</span>;
+  }
+  return (
+    <>
+      <span className="text-brand-950">{name.slice(0, lastSpace)}</span>{" "}
+      <span className="text-brand-700">{name.slice(lastSpace + 1)}</span>
+    </>
+  );
+}
+
 export function SiteHeader() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -92,14 +107,19 @@ export function SiteHeader() {
       <div className="mx-auto flex h-[3.75rem] max-w-7xl items-center justify-between gap-4 px-4 sm:h-16 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="min-w-0 shrink-0 leading-tight transition-opacity hover:opacity-90"
+          className="group/logo flex min-w-0 shrink-0 items-center gap-2 sm:gap-2.5"
           onClick={closeMenu}
         >
-          <span className="font-display text-lg font-semibold tracking-tight text-brand-900 sm:text-[1.125rem]">
-            {SITE.name}
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-700/[0.11] text-brand-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.5)] ring-1 ring-brand-700/10 transition-colors group-hover/logo:bg-brand-700/[0.16]">
+            <BrandMark className="h-[1.35rem] w-[1.35rem]" />
           </span>
-          <span className="mt-0.5 hidden text-[11px] font-medium uppercase tracking-[0.16em] text-charcoal-400 sm:block">
-            {SITE.tagline}
+          <span className="min-w-0 leading-tight">
+            <span className="block font-display text-[1rem] font-semibold tracking-tight sm:text-[1.125rem]">
+              <SiteWordMark />
+            </span>
+            <span className="mt-[3px] block max-w-[11rem] truncate text-[0.6875rem] font-medium tracking-wide text-charcoal-500 sm:max-w-[20rem] sm:text-[11px] sm:tracking-[0.02em] lg:max-w-[26rem]">
+              {SITE.brandSlogan}
+            </span>
           </span>
         </Link>
 

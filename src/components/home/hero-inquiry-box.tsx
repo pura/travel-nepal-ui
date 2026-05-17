@@ -67,7 +67,7 @@ export function HeroInquiryBox() {
           type="submit"
           className="rounded-xl bg-brand-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-800 sm:col-span-1"
         >
-          Get free ideas →
+          Plan your Adventure
         </button>
       </div>
     </form>

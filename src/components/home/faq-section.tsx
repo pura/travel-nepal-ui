@@ -8,9 +8,9 @@ export function FaqSection() {
       <Container className="max-w-3xl">
         <div id="faq-heading">
           <SectionHeading
-            eyebrow="FAQ"
-            title="Common questions"
-            description="Quick answers before you reach out — we're happy to go deeper on WhatsApp."
+            eyebrow="Decisions before you wire funds"
+            title="Practical answers for UK trekkers heading to Nepal"
+            description="Straight talk on flights vs land packages, permit pacing, safety culture, money flow — then deeper WhatsApp detail from the same team steering your dates."
             align="center"
           />
         </div>

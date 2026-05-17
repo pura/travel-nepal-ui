@@ -5,20 +5,22 @@ import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { IconShieldCheck } from "@/components/ui/icons";
+import { SiteIcon } from "@/components/ui/icons";
 import { HOMEPAGE_TRUST_CAROUSEL_SLIDES as slidesConst } from "@/lib/site-config";
 
 type TrustSlide = (typeof slidesConst)[number];
 
 const slides = [...slidesConst];
 
-function TrustCarouselCard({ slide }: { slide: TrustSlide }) {
-  const isPartner = slide.kind === "partner";
+function isExternalHref(href: string): boolean {
+  return href.startsWith("http");
+}
 
+function TrustCarouselCard({ slide }: { slide: TrustSlide }) {
   return (
-    <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-charcoal-200 bg-white shadow-card">
-      <div className="flex min-h-[7.25rem] items-center justify-center border-b border-charcoal-100 bg-charcoal-50/60 px-8 py-10">
-        {isPartner ? (
+    <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-charcoal-200 bg-white shadow-card transition-shadow hover:shadow-lift motion-safe:hover:border-brand-200">
+      <div className="flex min-h-[7.25rem] items-center justify-center border-b border-charcoal-100 bg-gradient-to-br from-charcoal-50 to-[#faf9f7] px-8 py-10">
+        {slide.kind === "partner" ? (
           <div className="relative h-14 w-full max-w-[240px]">
             <Image
               src={slide.logoUrl}
@@ -29,8 +31,8 @@ function TrustCarouselCard({ slide }: { slide: TrustSlide }) {
             />
           </div>
         ) : (
-          <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-700 text-white shadow-sm">
-            <IconShieldCheck className="h-9 w-9" />
+          <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-700 text-white shadow-sm ring-4 ring-brand-700/15">
+            <SiteIcon name={slide.headerIcon} className="h-9 w-9" />
           </span>
         )}
       </div>
@@ -38,15 +40,25 @@ function TrustCarouselCard({ slide }: { slide: TrustSlide }) {
         <h3 className="font-display text-2xl font-semibold tracking-tight text-charcoal-900">{slide.name}</h3>
         <p className="mt-1 text-sm font-medium text-brand-700">{slide.tagline}</p>
         <p className="mt-4 flex-1 text-sm leading-relaxed text-charcoal-600">{slide.description}</p>
-        <Link
-          href={slide.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-800 transition hover:text-brand-950"
-        >
-          {slide.linkLabel}
-          <span aria-hidden>→</span>
-        </Link>
+        {isExternalHref(slide.href) ? (
+          <a
+            href={slide.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-800 transition hover:text-brand-950"
+          >
+            {slide.linkLabel}
+            <span aria-hidden>→</span>
+          </a>
+        ) : (
+          <Link
+            href={slide.href}
+            className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-800 transition hover:text-brand-950"
+          >
+            {slide.linkLabel}
+            <span aria-hidden>→</span>
+          </Link>
+        )}
       </div>
     </div>
   );
@@ -99,13 +111,13 @@ export function PartnersSection() {
   const canNext = active < slides.length - 1;
 
   return (
-    <section className="section-padding bg-[#faf9f7]" aria-labelledby="partners-heading">
+    <section className="section-padding bg-white" aria-labelledby="partners-heading">
       <Container>
         <div id="partners-heading">
           <SectionHeading
-            eyebrow="Peace of mind"
-            title="ATOL protection, trusted operators"
-            description="From ATOL safeguards on qualifying bookings to Himalayan Circuit’s ground handling in Nepal—we pair financial clarity with dependable local delivery."
+            eyebrow="Partners & oversight"
+            title="UK clarity — Nepal execution"
+            description="Collaboration with audited Kathmandu operators complements British consumer standards: transparent itineraries, disciplined guide employment, lodges we’d sleep in ourselves—and escalations routed through both teams until resolved."
             align="center"
           />
         </div>
@@ -116,7 +128,7 @@ export function PartnersSection() {
           <div className="relative mt-12">
             <button
               type="button"
-              className="absolute left-0 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-charcoal-200 bg-white text-charcoal-700 shadow-sm transition hover:border-brand-300 hover:bg-brand-50 disabled:pointer-events-none disabled:opacity-30 sm:flex"
+              className="absolute left-0 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-charcoal-200 bg-white text-charcoal-700 shadow-soft transition hover:border-brand-300 hover:bg-brand-50 disabled:pointer-events-none disabled:opacity-30 sm:flex"
               aria-label="Previous slide"
               disabled={!canPrev}
               onClick={() => scrollToIndex(active - 1)}
@@ -127,7 +139,7 @@ export function PartnersSection() {
             </button>
             <button
               type="button"
-              className="absolute right-0 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-charcoal-200 bg-white text-charcoal-700 shadow-sm transition hover:border-brand-300 hover:bg-brand-50 disabled:pointer-events-none disabled:opacity-30 sm:flex"
+              className="absolute right-0 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-charcoal-200 bg-white text-charcoal-700 shadow-soft transition hover:border-brand-300 hover:bg-brand-50 disabled:pointer-events-none disabled:opacity-30 sm:flex"
               aria-label="Next slide"
               disabled={!canNext}
               onClick={() => scrollToIndex(active + 1)}
@@ -141,7 +153,7 @@ export function PartnersSection() {
               ref={scrollerRef}
               role="region"
               aria-roledescription="carousel"
-              aria-label="ATOL and partner information"
+              aria-label="Operational partners"
               className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-4 pt-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             >
               {slides.map((slide, i) => (
@@ -161,7 +173,7 @@ export function PartnersSection() {
                 <button
                   key={slide.id}
                   type="button"
-                  aria-label={`Show ${slide.name}`}
+                  aria-label={`Go to slide: ${slide.name}`}
                   aria-current={i === active ? "true" : undefined}
                   onClick={() => scrollToIndex(i)}
                   className={`h-2 rounded-full transition-all ${
@@ -171,9 +183,7 @@ export function PartnersSection() {
               ))}
             </div>
 
-            <p className="mt-3 text-center text-xs text-charcoal-500 sm:hidden">
-              Swipe sideways for ATOL information and partner details
-            </p>
+            <p className="mt-3 text-center text-xs text-charcoal-500 sm:hidden">Swipe sideways to compare partner details</p>
           </div>
         )}
       </Container>
