@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { getWhatsAppUrl } from "@/lib/site-config";
+import { AiChatTrigger } from "@/components/ai-chat";
 
 export function StickyMobileCta() {
   return (
@@ -13,14 +13,12 @@ export function StickyMobileCta() {
         >
           Plan your trip
         </Link>
-        <a
-          href={getWhatsAppUrl()}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex-1 rounded-full border border-[#25D366] bg-[#25D366]/10 py-3 text-center text-sm font-semibold text-[#128C7E]"
+        <AiChatTrigger
+          showIcon={false}
+          className="flex-1 rounded-full border border-brand-200 bg-brand-50 py-3 text-center text-sm font-semibold text-brand-800"
         >
-          WhatsApp
-        </a>
+          Ask AI
+        </AiChatTrigger>
       </div>
     </div>
   );

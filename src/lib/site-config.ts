@@ -22,14 +22,6 @@ export const SITE = {
 
 export const SITE_SLOGAN = SITE.brandSlogan;
 
-export function getWhatsAppUrl(message?: string): string {
-  const number =
-    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "") ?? "9779841234567";
-  const base = `https://wa.me/${number}`;
-  if (!message) return base;
-  return `${base}?text=${encodeURIComponent(message)}`;
-}
-
 export const TRUST_BADGES = [
   { label: "Local Experts", icon: "compass" },
   { label: "UK Based Support", icon: "users" },
@@ -83,7 +75,7 @@ export const WHY_BOOK = [
   {
     title: "Responsive communication",
     description:
-      "WhatsApp access to your planners and coordinators—typically within hours—evening UK time overlaps where it matters.",
+      "AI assistant and email access to your planners and coordinators—typically within hours—evening UK time overlaps where it matters.",
     icon: "message",
   },
 ] as const;
@@ -152,7 +144,7 @@ export const TESTIMONIALS = [
     location: "London, UK",
     trip: "Everest Base Camp",
     quote:
-      "From the first WhatsApp message to our final day in Lukla, the team felt genuinely invested in our safety and experience.",
+      "From the first message to our final day in Lukla, the team felt genuinely invested in our safety and experience.",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80&auto=format&fit=crop",
     rating: 5,
@@ -182,7 +174,7 @@ export const TESTIMONIALS = [
     location: "Dublin, Ireland",
     trip: "Pokhara & Poon Hill",
     quote:
-      "Responsive on WhatsApp at odd hours, flexible when our flight was delayed, and the sunrise at Poon Hill was unforgettable.",
+      "Responsive by email at odd hours, flexible when our flight was delayed, and the sunrise at Poon Hill was unforgettable.",
     image:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80&auto=format&fit=crop",
     rating: 5,
@@ -223,7 +215,7 @@ export const FAQ_ITEMS = [
   {
     question: "How far in advance should I book a Nepal trip?",
     answer:
-      "For peak trekking seasons (March–May and September–November), we recommend booking 2–3 months ahead. Custom itineraries can often be arranged sooner — contact us on WhatsApp for availability.",
+      "For peak trekking seasons (March–May and September–November), we recommend booking 2–3 months ahead. Custom itineraries can often be arranged sooner — use our plan-your-trip form or AI assistant for availability.",
   },
   {
     question: "Do you offer fully customised private treks?",

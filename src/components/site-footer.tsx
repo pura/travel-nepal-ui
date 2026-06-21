@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { IconWhatsApp } from "@/components/ui/icons";
-import { DESTINATIONS, getWhatsAppUrl, SITE } from "@/lib/site-config";
+import { AiChatTrigger } from "@/components/ai-chat";
+import { DESTINATIONS, SITE } from "@/lib/site-config";
 
 export function SiteFooter() {
   return (
@@ -44,15 +44,12 @@ export function SiteFooter() {
                   <p className="mt-1 text-[0.9375rem] font-medium leading-snug text-charcoal-200">{SITE.brandSlogan}</p>
                   <p className="mt-5 text-[0.9375rem] leading-relaxed text-charcoal-200">{SITE.tagline}</p>
                 </div>
-                <a
-                  href={getWhatsAppUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-fit items-center gap-2 self-start rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1fb855]"
+                <AiChatTrigger
+                  showIcon
+                  className="flex h-fit items-center gap-2 self-start rounded-full bg-brand-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-800"
                 >
-                  <IconWhatsApp className="h-5 w-5" />
-                  Speak with us on WhatsApp
-                </a>
+                  Ask our AI assistant
+                </AiChatTrigger>
               </div>
             </div>
           </div>

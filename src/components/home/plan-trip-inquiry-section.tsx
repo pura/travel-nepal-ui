@@ -1,7 +1,6 @@
 import { Container } from "@/components/ui/container";
-import { IconWhatsApp } from "@/components/ui/icons";
+import { AiChatTrigger } from "@/components/ai-chat";
 import { InquiryForm } from "@/components/home/inquiry-form";
-import { getWhatsAppUrl } from "@/lib/site-config";
 
 type PlanTripInquirySectionProps = {
   id?: string;
@@ -43,15 +42,14 @@ export function PlanTripInquirySection({
               anything — if we&apos;re not right for your trip, we&apos;ll tell you plainly; there&apos;s no pressure to
               book.
             </p>
-            <a
-              href={getWhatsAppUrl("I'd like trekking advice from Easy Travel Nepal (UK-arranged Nepal operations).")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:bg-[#1fb855]"
+            <AiChatTrigger
+              showIcon
+              seedMessage="I'd like trekking advice from Easy Travel Nepal (UK-arranged Nepal operations)."
+              autoSend
+              className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:bg-white/20"
             >
-              <IconWhatsApp className="h-5 w-5" />
-              WhatsApp a specialist
-            </a>
+              Ask our AI planner
+            </AiChatTrigger>
           </div>
           <InquiryForm initialTripType={prefilledTripType} initialDuration={prefilledDuration} />
         </div>

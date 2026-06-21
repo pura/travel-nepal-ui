@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { AiChatRoot } from "@/components/ai-chat";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
-import { WhatsAppFab } from "@/components/whatsapp-fab";
 import { SITE } from "@/lib/site-config";
 import "./globals.css";
 
@@ -47,11 +47,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${plusJakarta.variable} ${displayFont.variable}`}>
       <body className="min-h-screen bg-[#faf9f7] font-sans antialiased text-charcoal-900">
-        <SiteHeader />
-        <main className="min-h-[calc(100vh-4rem)] pb-20 sm:pb-0">{children}</main>
-        <SiteFooter />
-        <WhatsAppFab />
-        <StickyMobileCta />
+        <AiChatRoot>
+          <SiteHeader />
+          <main className="min-h-[calc(100vh-4rem)] pb-20 sm:pb-0">{children}</main>
+          <SiteFooter />
+          <StickyMobileCta />
+        </AiChatRoot>
       </body>
     </html>
   );

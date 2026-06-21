@@ -2,9 +2,10 @@ import { HOME_IMAGES } from "@/lib/trip-images";
 import Image from "next/image";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { IconCalendar, IconWhatsApp, SiteIcon } from "@/components/ui/icons";
+import { IconCalendar, SiteIcon } from "@/components/ui/icons";
+import { HeroChatButton } from "@/components/home/hero-chat-button";
 import { HeroInquiryBox } from "@/components/home/hero-inquiry-box";
-import { getWhatsAppUrl, TRUST_BADGES } from "@/lib/site-config";
+import { TRUST_BADGES } from "@/lib/site-config";
 import type { IconName } from "@/components/ui/icons";
 
 const HERO_IMAGE = HOME_IMAGES.hero;
@@ -51,17 +52,7 @@ export function HeroSection() {
               </span>
               Plan your trip
             </ButtonLink>
-            <ButtonLink
-              href={getWhatsAppUrl("Hello — I'd like to speak with a trekking specialist about trekking in Nepal.")}
-              variant="whatsapp"
-              size="lg"
-              className="shadow-lift motion-safe:transition-transform motion-safe:hover:translate-y-[-2px]"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <IconWhatsApp className="h-5 w-5 shrink-0" aria-hidden />
-              WhatsApp a local expert
-            </ButtonLink>
+            <HeroChatButton />
           </div>
 
           <ul className="mt-11 flex flex-wrap gap-x-5 gap-y-3.5 rounded-3xl border border-white/15 bg-charcoal-950/25 px-4 py-4 backdrop-blur-sm sm:gap-x-7 sm:px-6">

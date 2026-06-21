@@ -8,8 +8,8 @@ const variants = {
     "border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 focus-visible:ring-white",
   outline:
     "border border-charcoal-200 bg-white text-charcoal-900 shadow-sm hover:border-brand-300 hover:bg-brand-50 focus-visible:ring-brand-500",
-  whatsapp:
-    "bg-[#25D366] text-white shadow-soft hover:bg-[#1fb855] focus-visible:ring-[#25D366]",
+  chat:
+    "bg-brand-600 text-white shadow-soft hover:bg-brand-500 focus-visible:ring-brand-600",
   ghost: "text-brand-700 hover:bg-brand-50 focus-visible:ring-brand-500",
 } as const;
 

@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { PublicTrip } from "@/types/trip";
-import { getWhatsAppUrl, TRIP_FEATURE_TAGS } from "@/lib/site-config";
+import { TripCustomizeChatButton } from "@/components/trip-customize-chat-button";
+import { TRIP_FEATURE_TAGS } from "@/lib/site-config";
 
 function formatPrice(p: PublicTrip["priceFrom"]) {
   if (!p) return "Price on request";
@@ -89,14 +90,7 @@ export function FeaturedTripCard({ trip }: { trip: PublicTrip }) {
           >
             Get Itinerary
           </Link>
-          <a
-            href={getWhatsAppUrl(`Hi! I'm interested in customizing: ${trip.title}`)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full bg-brand-700 px-3 py-2.5 text-center text-xs font-semibold text-white transition hover:bg-brand-800 sm:text-sm"
-          >
-            Customize Tour
-          </a>
+          <TripCustomizeChatButton tripTitle={trip.title} />
         </div>
       </div>
     </article>

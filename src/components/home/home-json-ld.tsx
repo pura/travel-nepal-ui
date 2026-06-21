@@ -1,4 +1,4 @@
-import { SITE, SITE_SLOGAN, getWhatsAppUrl } from "@/lib/site-config";
+import { SITE, SITE_SLOGAN } from "@/lib/site-config";
 
 export function HomeJsonLd() {
   const data = {
@@ -35,7 +35,7 @@ export function HomeJsonLd() {
       ratingValue: "4.9",
       reviewCount: "120",
     },
-    sameAs: [getWhatsAppUrl()],
+    sameAs: [SITE.url],
     knowsAbout: [
       "Everest Base Camp trekking",
       "Annapurna trekking",

@@ -4,9 +4,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { type ReactNode, useEffect, useState } from "react";
 import { ButtonLink } from "@/components/ui/button";
-import { IconCalendar, IconRoute, IconStar, IconWhatsApp } from "@/components/ui/icons";
+import { IconCalendar, IconRoute, IconStar } from "@/components/ui/icons";
+import { AiChatTrigger } from "@/components/ai-chat";
 import { BrandMark } from "@/components/brand-mark";
-import { getWhatsAppUrl, SITE } from "@/lib/site-config";
+import { SITE } from "@/lib/site-config";
 
 type NavIcon = (props: { className?: string }) => JSX.Element;
 
@@ -155,15 +156,12 @@ export function SiteHeader() {
               </span>
               Plan your trip
             </ButtonLink>
-            <a
-              href={getWhatsAppUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border border-[#128C7E]/25 bg-white px-3.5 py-2 text-[0.8125rem] font-semibold text-[#128C7E] shadow-sm transition hover:border-[#128C7E]/40 hover:bg-[#128C7E]/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#128C7E] focus-visible:ring-offset-2"
+            <AiChatTrigger
+              showIcon
+              className="inline-flex items-center gap-1.5 rounded-full border border-brand-200 bg-white px-3.5 py-2 text-[0.8125rem] font-semibold text-brand-800 shadow-sm transition hover:border-brand-300 hover:bg-brand-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
             >
-              <IconWhatsApp className="h-4 w-4 shrink-0" />
-              WhatsApp
-            </a>
+              AI assistant
+            </AiChatTrigger>
           </div>
         </nav>
       </div>
@@ -214,16 +212,13 @@ export function SiteHeader() {
                 </span>
                 Plan your trip
               </ButtonLink>
-              <a
-                href={getWhatsAppUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#128C7E]/25 bg-white py-3 text-[0.875rem] font-semibold text-[#128C7E] shadow-sm transition hover:bg-[#128C7E]/[0.06]"
-                onClick={closeMenu}
+              <AiChatTrigger
+                showIcon
+                onOpen={closeMenu}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-brand-200 bg-brand-50 py-3 text-[0.875rem] font-semibold text-brand-800 shadow-sm transition hover:bg-brand-100"
               >
-                <IconWhatsApp className="h-5 w-5 shrink-0" aria-hidden />
-                Chat on WhatsApp
-              </a>
+                Ask our AI planner
+              </AiChatTrigger>
             </div>
           </nav>
         </div>

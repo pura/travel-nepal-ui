@@ -10,7 +10,7 @@ export function FaqSection() {
           <SectionHeading
             eyebrow="Decisions before you wire funds"
             title="Practical answers for UK trekkers heading to Nepal"
-            description="Straight talk on flights vs land packages, permit pacing, safety culture, money flow — then deeper WhatsApp detail from the same team steering your dates."
+            description="Straight talk on flights vs land packages, permit pacing, safety culture, money flow — then deeper detail from the same team steering your dates."
             align="center"
           />
         </div>
