@@ -1,8 +1,8 @@
 import type { PublicTrip } from "@/types/trip";
+import { ITINERARY_IMAGES, LOCATION_IMAGES, TRIP_HERO_IMAGES } from "@/lib/trip-images";
 
 const MAP_URL = "https://himalayancircuit.com/images/map/Group%20277.png";
-const HERO_URL =
-  "https://himalayancircuit.com/storage/media/annapurna-royal-trekking-1.webp";
+const HERO_URL = TRIP_HERO_IMAGES["the-royal-annapurna-trekking"];
 
 export const FALLBACK_TRIP_THE_ROYAL_ANNAPURNA_TREKKING: PublicTrip = {
   id: 18,
@@ -37,7 +37,11 @@ export const FALLBACK_TRIP_THE_ROYAL_ANNAPURNA_TREKKING: PublicTrip = {
   fitnessNotes: ["Aerobic fitness"],
   recommendedSeasons: ["All year round"],
   mapImageUrl: MAP_URL,
-  galleryImageUrls: [HERO_URL, MAP_URL],
+  galleryImageUrls: [
+    HERO_URL,
+    LOCATION_IMAGES.sarangkot,
+    LOCATION_IMAGES.phewaLake,
+  ],
   sourceReferenceUrl:
     "https://himalayancircuit.com/tour/the-royal-annapurna-trekking",
   priceTable: {
@@ -181,6 +185,7 @@ export const FALLBACK_TRIP_THE_ROYAL_ANNAPURNA_TREKKING: PublicTrip = {
       durationHours: 6,
       accommodation: "Hotel",
       meals: "Breakfast, lunch",
+      imageUrl: ITINERARY_IMAGES.phewaLake,
     },
   ],
 };

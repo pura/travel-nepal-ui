@@ -1,8 +1,8 @@
 import type { PublicTrip } from "@/types/trip";
+import { ITINERARY_IMAGES, LOCATION_IMAGES, TRIP_HERO_IMAGES } from "@/lib/trip-images";
 
 const MAP_URL = "https://himalayancircuit.com/images/map/Group%20277.png";
-const HERO_URL =
-  "https://himalayancircuit.com/storage/media/kathmandu-cultural-tour1.webp";
+const HERO_URL = TRIP_HERO_IMAGES["buddhist-pilgrimage-tour"];
 
 export const FALLBACK_TRIP_BUDDHIST_PILGRIMAGE_TOUR: PublicTrip = {
   id: 6,
@@ -38,7 +38,12 @@ export const FALLBACK_TRIP_BUDDHIST_PILGRIMAGE_TOUR: PublicTrip = {
   fitnessNotes: ["Aerobic fitness"],
   recommendedSeasons: ["All year round"],
   mapImageUrl: MAP_URL,
-  galleryImageUrls: [HERO_URL, MAP_URL],
+  galleryImageUrls: [
+    HERO_URL,
+    LOCATION_IMAGES.boudha,
+    LOCATION_IMAGES.lumbini,
+    LOCATION_IMAGES.swayambhunath,
+  ],
   sourceReferenceUrl:
     "https://himalayancircuit.com/tour/buddhist-pilgrimage-tour",
   priceTable: {
@@ -154,6 +159,7 @@ export const FALLBACK_TRIP_BUDDHIST_PILGRIMAGE_TOUR: PublicTrip = {
       durationHours: 2,
       accommodation: "Monastery",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.boudha,
     },
     {
       dayNumber: 3,
@@ -182,6 +188,7 @@ export const FALLBACK_TRIP_BUDDHIST_PILGRIMAGE_TOUR: PublicTrip = {
       durationHours: 10,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.lumbini,
     },
     {
       dayNumber: 5,
@@ -224,6 +231,7 @@ export const FALLBACK_TRIP_BUDDHIST_PILGRIMAGE_TOUR: PublicTrip = {
       durationHours: 0.5,
       accommodation: "Hotel",
       meals: "Breakfast, dinner",
+      imageUrl: ITINERARY_IMAGES.swayambhunath,
     },
     {
       dayNumber: 8,

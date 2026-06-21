@@ -1,8 +1,8 @@
 import type { PublicTrip } from "@/types/trip";
+import { ITINERARY_IMAGES, LOCATION_IMAGES, TRIP_HERO_IMAGES } from "@/lib/trip-images";
 
 const MAP_URL = "https://himalayancircuit.com/images/map/Group%20277.png";
-const HERO_URL =
-  "https://himalayancircuit.com/storage/media/chisapani-helambu-trek.jpg";
+const HERO_URL = TRIP_HERO_IMAGES["chisapani-helambu-trek-itinerary-cost"];
 
 export const FALLBACK_TRIP_CHISAPANI_HELAMBU_TREK: PublicTrip = {
   id: 22,
@@ -38,7 +38,11 @@ export const FALLBACK_TRIP_CHISAPANI_HELAMBU_TREK: PublicTrip = {
   fitnessNotes: ["Aerobic fitness", "Stamina"],
   recommendedSeasons: ["All year round"],
   mapImageUrl: MAP_URL,
-  galleryImageUrls: [HERO_URL, MAP_URL],
+  galleryImageUrls: [
+    HERO_URL,
+    LOCATION_IMAGES.sundarijal,
+    LOCATION_IMAGES.tarkeGhyang,
+  ],
   sourceReferenceUrl:
     "https://himalayancircuit.com/tour/chisapani-helambu-trek-itinerary-cost",
   priceTable: {
@@ -138,6 +142,7 @@ export const FALLBACK_TRIP_CHISAPANI_HELAMBU_TREK: PublicTrip = {
       durationHours: 5,
       accommodation: "Tea house / mountain lodge",
       meals: "Lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.sundarijal,
     },
     {
       dayNumber: 2,
@@ -180,6 +185,7 @@ export const FALLBACK_TRIP_CHISAPANI_HELAMBU_TREK: PublicTrip = {
       durationHours: 6,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.tarkeGhyang,
     },
     {
       dayNumber: 5,

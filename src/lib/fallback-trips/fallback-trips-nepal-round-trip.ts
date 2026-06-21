@@ -1,8 +1,8 @@
 import type { PublicTrip } from "@/types/trip";
+import { ITINERARY_IMAGES, LOCATION_IMAGES, TRIP_HERO_IMAGES } from "@/lib/trip-images";
 
 const MAP_URL = "https://himalayancircuit.com/images/map/Group%20277.png";
-const HERO_URL =
-  "https://himalayancircuit.com/storage/media/kathmandu-cultural-tour1.webp";
+const HERO_URL = TRIP_HERO_IMAGES["nepal-round-trip"];
 
 export const FALLBACK_TRIP_NEPAL_ROUND_TRIP: PublicTrip = {
   id: 26,
@@ -39,7 +39,12 @@ export const FALLBACK_TRIP_NEPAL_ROUND_TRIP: PublicTrip = {
   fitnessNotes: ["Aerobic fitness"],
   recommendedSeasons: ["All year round"],
   mapImageUrl: MAP_URL,
-  galleryImageUrls: [HERO_URL, MAP_URL],
+  galleryImageUrls: [
+    HERO_URL,
+    LOCATION_IMAGES.boudha,
+    LOCATION_IMAGES.chitwanSafari,
+    LOCATION_IMAGES.phewaLake,
+  ],
   sourceReferenceUrl:
     "https://himalayancircuit.com/tour/nepal-round-trip",
   priceTable: {
@@ -154,6 +159,7 @@ export const FALLBACK_TRIP_NEPAL_ROUND_TRIP: PublicTrip = {
       durationHours: 6,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.boudha,
     },
     {
       dayNumber: 3,
@@ -168,6 +174,7 @@ export const FALLBACK_TRIP_NEPAL_ROUND_TRIP: PublicTrip = {
       durationHours: 6,
       accommodation: "Hotel",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.chitwanSafari,
     },
     {
       dayNumber: 4,
@@ -210,6 +217,7 @@ export const FALLBACK_TRIP_NEPAL_ROUND_TRIP: PublicTrip = {
       durationHours: 5,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.sarangkot,
     },
     {
       dayNumber: 7,
@@ -224,6 +232,7 @@ export const FALLBACK_TRIP_NEPAL_ROUND_TRIP: PublicTrip = {
       durationHours: 5,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.phewaLake,
     },
     {
       dayNumber: 8,

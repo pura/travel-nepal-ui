@@ -1,7 +1,8 @@
 import type { PublicTrip } from "@/types/trip";
+import { ITINERARY_IMAGES, LOCATION_IMAGES, TRIP_HERO_IMAGES } from "@/lib/trip-images";
 
 const MAP_URL = "https://himalayancircuit.com/images/map/Group%20277.png";
-const HERO_URL = "https://himalayancircuit.com/storage/media/ganjala-pass-trek.webp";
+const HERO_URL = TRIP_HERO_IMAGES["langtang-valley-trek-with-ganja-la-pass"];
 
 export const FALLBACK_TRIP_LANGTANG_VALLEY_GANJA_LA_PASS_14_DAYS: PublicTrip = {
   id: 17,
@@ -36,7 +37,12 @@ export const FALLBACK_TRIP_LANGTANG_VALLEY_GANJA_LA_PASS_14_DAYS: PublicTrip = {
   fitnessNotes: ["Strength", "Stamina"],
   recommendedSeasons: ["Autumn", "Spring"],
   mapImageUrl: MAP_URL,
-  galleryImageUrls: [HERO_URL, MAP_URL],
+  galleryImageUrls: [
+    HERO_URL,
+    LOCATION_IMAGES.langtangVillage,
+    LOCATION_IMAGES.kyanjinGompa,
+    LOCATION_IMAGES.tarkeGhyang,
+  ],
   sourceReferenceUrl: "https://himalayancircuit.com/tour/langtang-valley-trek-with-ganja-la-pass",
   priceTable: {
     currency: "USD",
@@ -195,6 +201,7 @@ export const FALLBACK_TRIP_LANGTANG_VALLEY_GANJA_LA_PASS_14_DAYS: PublicTrip = {
       durationHours: 6,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.langtangVillage,
     },
     {
       dayNumber: 6,
@@ -279,6 +286,7 @@ export const FALLBACK_TRIP_LANGTANG_VALLEY_GANJA_LA_PASS_14_DAYS: PublicTrip = {
       durationHours: 7,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.tarkeGhyang,
     },
     {
       dayNumber: 12,

@@ -1,8 +1,8 @@
 import type { PublicTrip } from "@/types/trip";
+import { ITINERARY_IMAGES, LOCATION_IMAGES, TRIP_HERO_IMAGES } from "@/lib/trip-images";
 
 const MAP_URL = "https://himalayancircuit.com/images/map/Group%20277.png";
-const HERO_URL =
-  "https://himalayancircuit.com/storage/media/upper-mustang-trek.webp";
+const HERO_URL = TRIP_HERO_IMAGES["upper-mustang-trek-hidden-kingdom"];
 
 export const FALLBACK_TRIP_UPPER_MUSTANG_TREK_HIDDEN_KINGDOM: PublicTrip = {
   id: 15,
@@ -38,7 +38,12 @@ export const FALLBACK_TRIP_UPPER_MUSTANG_TREK_HIDDEN_KINGDOM: PublicTrip = {
   fitnessNotes: ["Aerobic fitness", "Strength", "Stamina"],
   recommendedSeasons: ["Autumn", "Spring"],
   mapImageUrl: MAP_URL,
-  galleryImageUrls: [HERO_URL, MAP_URL],
+  galleryImageUrls: [
+    HERO_URL,
+    LOCATION_IMAGES.upperMustang,
+    LOCATION_IMAGES.kagbeni,
+    LOCATION_IMAGES.muktinath,
+  ],
   sourceReferenceUrl:
     "https://himalayancircuit.com/tour/upper-mustang-trek-hidden-kingdom",
   priceTable: {
@@ -185,6 +190,7 @@ export const FALLBACK_TRIP_UPPER_MUSTANG_TREK_HIDDEN_KINGDOM: PublicTrip = {
       durationHours: 5,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.kagbeni,
     },
     {
       dayNumber: 5,
@@ -241,6 +247,7 @@ export const FALLBACK_TRIP_UPPER_MUSTANG_TREK_HIDDEN_KINGDOM: PublicTrip = {
       durationHours: 5,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.upperMustang,
     },
     {
       dayNumber: 9,
@@ -297,6 +304,7 @@ export const FALLBACK_TRIP_UPPER_MUSTANG_TREK_HIDDEN_KINGDOM: PublicTrip = {
       durationHours: 7,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.muktinath,
     },
     {
       dayNumber: 13,
@@ -311,6 +319,7 @@ export const FALLBACK_TRIP_UPPER_MUSTANG_TREK_HIDDEN_KINGDOM: PublicTrip = {
       durationHours: 6,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: LOCATION_IMAGES.jomsom,
     },
     {
       dayNumber: 14,

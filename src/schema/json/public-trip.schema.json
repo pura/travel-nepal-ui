@@ -96,7 +96,8 @@
           "altitudeMaxM": { "type": "number" },
           "altitudeMinM": { "type": "number" },
           "durationHours": { "type": "number" },
-          "accommodation": { "type": "string" }
+          "accommodation": { "type": "string" },
+          "imageUrl": { "type": ["string", "null"] }
         }
       }
     },

@@ -1,11 +1,11 @@
+import { HOME_IMAGES } from "@/lib/trip-images";
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { IconShieldCheck } from "@/components/ui/icons";
 import { SITE } from "@/lib/site-config";
 
-const SPLIT_IMAGE =
-  "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=85&auto=format&fit=crop";
+const SPLIT_IMAGE = HOME_IMAGES.trustSection;
 
 export function UkNepalTrustSection() {
   return (

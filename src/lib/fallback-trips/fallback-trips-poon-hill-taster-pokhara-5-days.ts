@@ -1,5 +1,8 @@
 import type { PublicTrip } from "@/types/trip";
+import { ITINERARY_IMAGES, LOCATION_IMAGES, TRIP_HERO_IMAGES } from "@/lib/trip-images";
 import { FALLBACK_DETAIL_MOCK_HILL_TREK } from "@/lib/fallback-trips/fallback-trip-detail-mocks";
+
+const HERO_URL = TRIP_HERO_IMAGES["poon-hill-taster-pokhara-5-days"];
 
 export const FALLBACK_TRIP_POON_HILL_TASTER_POKHARA_5_DAYS: PublicTrip = {
   id: 14,
@@ -24,13 +27,17 @@ export const FALLBACK_TRIP_POON_HILL_TASTER_POKHARA_5_DAYS: PublicTrip = {
     "gurung",
   ],
   priceFrom: { amount: "540", currency: "GBP" },
-  imageUrl:
-    "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
+  imageUrl: HERO_URL,
   startingRegion: { slug: "pokhara", name: "Pokhara" },
   ...FALLBACK_DETAIL_MOCK_HILL_TREK,
   totalDistanceKm: 48,
   altitudeMaxM: 3210,
-  galleryImageUrls: ["https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80"],
+  galleryImageUrls: [
+    HERO_URL,
+    "/images/trips/ghorepani-poon-hill/gallery-2512.jpeg",
+    LOCATION_IMAGES.poonHill,
+    LOCATION_IMAGES.ghandruk,
+  ],
   services: {
     included: [
       "Accommodation in twin-sharing teahouses on the trek",
@@ -73,6 +80,7 @@ export const FALLBACK_TRIP_POON_HILL_TASTER_POKHARA_5_DAYS: PublicTrip = {
         "A longer day with a stiff climb on stone steps toward Ulleri, then steadier forest walking through oak and rhododendron past Banthanti and Nangethanti to Ghorepani, where lodges sit on a ridge with wide views toward Nilgiri, Dhaulagiri, and the Annapurna chain.",
       meals: "Meals: Breakfast",
       destinationName: "Ghorepani",
+      imageUrl: ITINERARY_IMAGES.ghorepani,
     },
     {
       dayNumber: 3,
@@ -82,6 +90,7 @@ export const FALLBACK_TRIP_POON_HILL_TASTER_POKHARA_5_DAYS: PublicTrip = {
         "You leave before dawn for Poon Hill (about 3,210 m) for sunrise over Dhaulagiri and the Annapurna massif, then return to Ghorepani for breakfast. The trail continues over Deurali (about 3,160 m) through rhododendron jungle to Tadapani.",
       meals: "Meals: Breakfast",
       destinationName: "Tadapani",
+      imageUrl: ITINERARY_IMAGES.poonHill,
     },
     {
       dayNumber: 4,
@@ -91,6 +100,7 @@ export const FALLBACK_TRIP_POON_HILL_TASTER_POKHARA_5_DAYS: PublicTrip = {
         "Mostly downhill through mixed forest with glimpses of Annapurna South and Machhapuchhre, crossing streams before the stone houses of Ghandruk—one of the largest Gurung settlements in the hills.",
       meals: "Meals: Breakfast",
       destinationName: "Ghandruk",
+      imageUrl: ITINERARY_IMAGES.ghandruk,
     },
     {
       dayNumber: 5,

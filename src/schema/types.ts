@@ -31,6 +31,8 @@ export type PublicTripDay = {
   altitudeMinM?: number;
   durationHours?: number;
   accommodation?: string;
+  /** Optional photo for significant stops in the detailed itinerary */
+  imageUrl?: string | null;
 };
 
 export type TripPriceTableColumn = {

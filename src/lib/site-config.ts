@@ -1,5 +1,7 @@
 /** Brand + contact constants for Easy Travel Nepal */
 
+import { DESTINATION_IMAGES } from "@/lib/trip-images";
+
 export const SITE = {
   name: "Easy Travel Nepal",
   tagline: "UK-based Nepal trekking specialists — Himalayan expertise delivered by trusted local partners.",
@@ -106,8 +108,7 @@ export const DESTINATIONS = [
     name: "Everest",
     slug: "everest" satisfies DestinationSlug,
     tagline: "Khumbu & legendary peaks",
-    image:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80&auto=format&fit=crop",
+    image: DESTINATION_IMAGES.everest,
     description:
       "The Everest region draws trekkers seeking Sherpa hospitality, roaring rivers, and the drama of Himalayan giants. Trails like Everest Base Camp and Gokyo’s turquoise lakes weave through Sagarmatha National Park—a landscape of glaciers, prayer flags, and lodges with unforgettable views.",
   },
@@ -115,8 +116,7 @@ export const DESTINATIONS = [
     name: "Kathmandu",
     slug: "kathmandu" satisfies DestinationSlug,
     tagline: "Temples, culture & heritage",
-    image:
-      "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&q=80&auto=format&fit=crop",
+    image: DESTINATION_IMAGES.kathmandu,
     description:
       "Nepal’s capital is more than a gateway: ornate durbar squares, Buddhist stupas, and labyrinthine alleyways reveal centuries of art and devotion. Blend guided heritage walks with mountain flights toward Everest, hillside sunrises in Nagarkot, and leisurely coffee stops in bustling Thamel before you head deeper into the country.",
   },
@@ -124,8 +124,7 @@ export const DESTINATIONS = [
     name: "Pokhara",
     slug: "pokhara" satisfies DestinationSlug,
     tagline: "Lakes, Annapurna views & calm",
-    image:
-      "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=1200&q=80&auto=format&fit=crop",
+    image: DESTINATION_IMAGES.pokhara,
     description:
       "Phewa Lake reflects Machhapuchhre on clear mornings—this is Nepal’s Lakeside sanctuary. Paddle at sunrise, soar on a paragliding glide path, circle the Peace Pagoda, or use Pokhara as the launchpad for gentler Annapurna foothill walks and viewpoints like Sarangkot.",
   },
@@ -133,8 +132,7 @@ export const DESTINATIONS = [
     name: "Chitwan",
     slug: "chitwan" satisfies DestinationSlug,
     tagline: "Jungle safaris & wildlife",
-    image:
-      "https://images.unsplash.com/photo-1589656966895-2f33e7653819?w=1200&q=80&auto=format&fit=crop",
+    image: DESTINATION_IMAGES.chitwan,
     description:
       "Chitwan’s lowlands feel worlds apart from snowline trails. Elephant grass, hardwood forest, and the Rapti river frame safari drives and canoe outings where rhinos, deer, crocodiles—and with luck—the Bengal tiger may appear. It’s ideal after a trek when you crave warmth, wildlife, and slower afternoons.",
   },
@@ -142,8 +140,7 @@ export const DESTINATIONS = [
     name: "Annapurna",
     slug: "annapurna" satisfies DestinationSlug,
     tagline: "Classic treks & village trails",
-    image:
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80&auto=format&fit=crop",
+    image: DESTINATION_IMAGES.annapurna,
     description:
       "The Annapurna massif offers some of Nepal’s most varied trekking—from short Ghorepani–Poon Hill sunrises to the full Annapurna Circuit over Thorung La. Tea houses dot rhododendron forests and high pastures; Gurung and Manangi villages lend warmth, dal bhat dinners, and stories between days on the trail.",
   },

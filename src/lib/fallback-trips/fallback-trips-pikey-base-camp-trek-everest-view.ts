@@ -1,8 +1,8 @@
 import type { PublicTrip } from "@/types/trip";
+import { ITINERARY_IMAGES, LOCATION_IMAGES, TRIP_HERO_IMAGES } from "@/lib/trip-images";
 
 const MAP_URL = "https://himalayancircuit.com/images/map/Group%20277.png";
-const HERO_URL =
-  "https://himalayancircuit.com/storage/media/pikey-peak-trekking.webp";
+const HERO_URL = TRIP_HERO_IMAGES["pikey-base-camp-trek-everest-view"];
 
 export const FALLBACK_TRIP_PIKEY_BASE_CAMP_TREK_EVEREST_VIEW: PublicTrip = {
   id: 23,
@@ -38,7 +38,11 @@ export const FALLBACK_TRIP_PIKEY_BASE_CAMP_TREK_EVEREST_VIEW: PublicTrip = {
   fitnessNotes: ["Aerobic fitness"],
   recommendedSeasons: ["Autumn", "Spring"],
   mapImageUrl: MAP_URL,
-  galleryImageUrls: [HERO_URL, MAP_URL],
+  galleryImageUrls: [
+    HERO_URL,
+    LOCATION_IMAGES.kalaPatthar,
+    LOCATION_IMAGES.boudha,
+  ],
   sourceReferenceUrl:
     "https://himalayancircuit.com/tour/pikey-base-camp-trek-everest-view",
   priceTable: {
@@ -181,6 +185,7 @@ export const FALLBACK_TRIP_PIKEY_BASE_CAMP_TREK_EVEREST_VIEW: PublicTrip = {
       durationHours: 5,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.kalaPatthar,
     },
     {
       dayNumber: 4,
@@ -265,6 +270,7 @@ export const FALLBACK_TRIP_PIKEY_BASE_CAMP_TREK_EVEREST_VIEW: PublicTrip = {
       durationHours: 5,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.boudha,
     },
     {
       dayNumber: 10,

@@ -1,7 +1,8 @@
 import type { PublicTrip } from "@/types/trip";
+import { ITINERARY_IMAGES, LOCATION_IMAGES, TRIP_HERO_IMAGES } from "@/lib/trip-images";
 
 const MAP_URL = "https://himalayancircuit.com/images/map/Group%20277.png";
-const HERO_URL = "https://himalayancircuit.com/storage/media/annapurna-trek-nepal.webp";
+const HERO_URL = TRIP_HERO_IMAGES["explore-annapurna-base-camp-in-17-days"];
 
 export const FALLBACK_TRIP_EXPLORE_ANNAPURNA_BASE_CAMP_17_DAYS: PublicTrip = {
   id: 11,
@@ -37,7 +38,11 @@ export const FALLBACK_TRIP_EXPLORE_ANNAPURNA_BASE_CAMP_17_DAYS: PublicTrip = {
   fitnessNotes: ["Strength", "Stamina"],
   recommendedSeasons: ["Autumn", "Spring"],
   mapImageUrl: MAP_URL,
-  galleryImageUrls: [HERO_URL, MAP_URL],
+  galleryImageUrls: [
+    HERO_URL,
+    LOCATION_IMAGES.ghandruk,
+    LOCATION_IMAGES.mardiHimal,
+  ],
   sourceReferenceUrl: "https://himalayancircuit.com/tour/explore-annapurna-base-camp-in-17-days",
   priceTable: {
     currency: "USD",
@@ -164,6 +169,7 @@ export const FALLBACK_TRIP_EXPLORE_ANNAPURNA_BASE_CAMP_17_DAYS: PublicTrip = {
       durationHours: 5,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.swayambhunath,
     },
     {
       dayNumber: 3,
@@ -178,6 +184,7 @@ export const FALLBACK_TRIP_EXPLORE_ANNAPURNA_BASE_CAMP_17_DAYS: PublicTrip = {
       durationHours: 5,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.boudha,
     },
     {
       dayNumber: 4,
@@ -206,6 +213,7 @@ export const FALLBACK_TRIP_EXPLORE_ANNAPURNA_BASE_CAMP_17_DAYS: PublicTrip = {
       durationHours: 7,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.ghandruk,
     },
     {
       dayNumber: 6,

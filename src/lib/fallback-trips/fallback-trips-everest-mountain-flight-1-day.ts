@@ -1,5 +1,8 @@
 import type { PublicTrip } from "@/types/trip";
+import { DESTINATION_IMAGES, TRIP_HERO_IMAGES } from "@/lib/trip-images";
 import { FALLBACK_DETAIL_MOCK_CITY_TOUR } from "@/lib/fallback-trips/fallback-trip-detail-mocks";
+
+const HERO_URL = TRIP_HERO_IMAGES["everest-mountain-flight-1-day"];
 
 export const FALLBACK_TRIP_EVEREST_MOUNTAIN_FLIGHT_1_DAY: PublicTrip = {
   id: 16,
@@ -23,15 +26,14 @@ export const FALLBACK_TRIP_EVEREST_MOUNTAIN_FLIGHT_1_DAY: PublicTrip = {
     "aerial_views",
   ],
   priceFrom: { amount: "250", currency: "USD" },
-  imageUrl:
-    "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80",
+  imageUrl: HERO_URL,
   startingRegion: { slug: "kathmandu-valley", name: "Kathmandu Valley" },
   ...FALLBACK_DETAIL_MOCK_CITY_TOUR,
   totalDistanceKm: 24,
   altitudeMaxM: 1400,
   altitudeMinM: 1300,
   routeGrades: ["Grade A (minimal walking; seated flight)"],
-  galleryImageUrls: ["https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80"],
+  galleryImageUrls: [HERO_URL, DESTINATION_IMAGES.everest],
   services: {
     included: [
       "Airport transfers by private car",

@@ -410,6 +410,17 @@ export default async function TripDetailPage({ params }: Props) {
                     <h3 className="mt-1 text-lg font-semibold text-stone-900">{d.title}</h3>
                     <p className="mt-1 text-sm text-stone-600">{d.description}</p>
                     <DayStats day={d} />
+                    {d.imageUrl ? (
+                      <figure className="relative mt-4 aspect-[16/9] max-h-52 w-full overflow-hidden rounded-lg border border-stone-100 bg-stone-50">
+                        <Image
+                          src={d.imageUrl}
+                          alt=""
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, 800px"
+                        />
+                      </figure>
+                    ) : null}
                     {d.details ? (
                       <div className="mt-4 space-y-3 text-sm leading-6 text-stone-700">
                         {d.details.split("\n\n").map((paragraph, index) => (

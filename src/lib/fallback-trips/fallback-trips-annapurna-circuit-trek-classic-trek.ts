@@ -1,8 +1,8 @@
 import type { PublicTrip } from "@/types/trip";
+import { ITINERARY_IMAGES, LOCATION_IMAGES, TRIP_HERO_IMAGES } from "@/lib/trip-images";
 
 const MAP_URL = "https://himalayancircuit.com/images/map/Group%20277.png";
-const HERO_URL =
-  "https://himalayancircuit.com/storage/media/annapurnacircuittreknepal.webp";
+const HERO_URL = TRIP_HERO_IMAGES["annapurna-circuit-trek-classic-trek"];
 
 export const FALLBACK_TRIP_ANNAPURNA_CIRCUIT_CLASSIC_TREK: PublicTrip = {
   id: 7,
@@ -38,7 +38,12 @@ export const FALLBACK_TRIP_ANNAPURNA_CIRCUIT_CLASSIC_TREK: PublicTrip = {
   fitnessNotes: ["Strength", "Stamina"],
   recommendedSeasons: ["Autumn", "Spring"],
   mapImageUrl: MAP_URL,
-  galleryImageUrls: [HERO_URL, MAP_URL],
+  galleryImageUrls: [
+    HERO_URL,
+    LOCATION_IMAGES.muktinath,
+    LOCATION_IMAGES.kagbeni,
+    LOCATION_IMAGES.poonHill,
+  ],
   sourceReferenceUrl:
     "https://himalayancircuit.com/tour/annapurna-circuit-trek-classic-trek",
   priceTable: {
@@ -320,6 +325,7 @@ export const FALLBACK_TRIP_ANNAPURNA_CIRCUIT_CLASSIC_TREK: PublicTrip = {
       durationHours: 9,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.muktinath,
     },
     {
       dayNumber: 14,
@@ -376,6 +382,7 @@ export const FALLBACK_TRIP_ANNAPURNA_CIRCUIT_CLASSIC_TREK: PublicTrip = {
       durationHours: 8,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.ghorepani,
     },
     {
       dayNumber: 18,
@@ -390,6 +397,7 @@ export const FALLBACK_TRIP_ANNAPURNA_CIRCUIT_CLASSIC_TREK: PublicTrip = {
       durationHours: 5,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.poonHill,
     },
     {
       dayNumber: 19,

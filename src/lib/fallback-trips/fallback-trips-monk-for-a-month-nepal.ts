@@ -1,8 +1,8 @@
 import type { PublicTrip } from "@/types/trip";
+import { ITINERARY_IMAGES, LOCATION_IMAGES, TRIP_HERO_IMAGES } from "@/lib/trip-images";
 
 const MAP_URL = "https://himalayancircuit.com/images/map/Group%20277.png";
-const HERO_URL =
-  "https://himalayancircuit.com/storage/media/monk-for-a-month.webp";
+const HERO_URL = TRIP_HERO_IMAGES["monk-for-a-month-nepal"];
 
 export const FALLBACK_TRIP_MONK_FOR_A_MONTH_NEPAL: PublicTrip = {
   id: 27,
@@ -41,9 +41,9 @@ export const FALLBACK_TRIP_MONK_FOR_A_MONTH_NEPAL: PublicTrip = {
   mapImageUrl: MAP_URL,
   galleryImageUrls: [
     HERO_URL,
-    "https://himalayancircuit.com/storage/media/Boudhanath-Half-Day-Tour.webp",
-    "https://himalayancircuit.com/storage/media/Swayambhuanath-Stupa.webp",
-    MAP_URL,
+    LOCATION_IMAGES.boudha,
+    LOCATION_IMAGES.swayambhunath,
+    LOCATION_IMAGES.lumbini,
   ],
   sourceReferenceUrl:
     "https://himalayancircuit.com/tour/monk-for-a-month-nepal",
@@ -163,6 +163,7 @@ export const FALLBACK_TRIP_MONK_FOR_A_MONTH_NEPAL: PublicTrip = {
       durationHours: 4,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.swayambhunath,
     },
     {
       dayNumber: 3,
@@ -191,6 +192,7 @@ export const FALLBACK_TRIP_MONK_FOR_A_MONTH_NEPAL: PublicTrip = {
       durationHours: 7,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.boudha,
     },
     {
       dayNumber: 5,
@@ -275,6 +277,7 @@ export const FALLBACK_TRIP_MONK_FOR_A_MONTH_NEPAL: PublicTrip = {
       durationHours: 5,
       accommodation: "Hotel",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.chitwanSafari,
     },
     {
       dayNumber: 11,
@@ -303,6 +306,7 @@ export const FALLBACK_TRIP_MONK_FOR_A_MONTH_NEPAL: PublicTrip = {
       durationHours: 5,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.lumbini,
     },
     {
       dayNumber: 13,
@@ -359,6 +363,7 @@ export const FALLBACK_TRIP_MONK_FOR_A_MONTH_NEPAL: PublicTrip = {
       durationHours: 4,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.sarangkot,
     },
     {
       dayNumber: 17,

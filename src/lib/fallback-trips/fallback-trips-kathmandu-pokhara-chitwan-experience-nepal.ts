@@ -1,8 +1,8 @@
 import type { PublicTrip } from "@/types/trip";
+import { ITINERARY_IMAGES, LOCATION_IMAGES, TRIP_HERO_IMAGES } from "@/lib/trip-images";
 
 const MAP_URL = "https://himalayancircuit.com/images/map/Group%20277.png";
-const HERO_URL =
-  "https://himalayancircuit.com/storage/media/kathmandu-cultural-tour1.webp";
+const HERO_URL = TRIP_HERO_IMAGES["kathmandu-pokhara-chitwan-experience-nepal"];
 
 export const FALLBACK_TRIP_KATHMANDU_POKHARA_CHITWAN_EXPERIENCE_NEPAL: PublicTrip = {
   id: 10,
@@ -39,7 +39,13 @@ export const FALLBACK_TRIP_KATHMANDU_POKHARA_CHITWAN_EXPERIENCE_NEPAL: PublicTri
   fitnessNotes: ["Aerobic fitness"],
   recommendedSeasons: ["All year round"],
   mapImageUrl: MAP_URL,
-  galleryImageUrls: [HERO_URL, MAP_URL],
+  galleryImageUrls: [
+    HERO_URL,
+    LOCATION_IMAGES.boudha,
+    LOCATION_IMAGES.chitwanSafari,
+    LOCATION_IMAGES.phewaLake,
+    LOCATION_IMAGES.bandipur,
+  ],
   sourceReferenceUrl:
     "https://himalayancircuit.com/tour/experiential-nepal-tour",
   priceTable: {
@@ -161,6 +167,7 @@ export const FALLBACK_TRIP_KATHMANDU_POKHARA_CHITWAN_EXPERIENCE_NEPAL: PublicTri
       durationHours: 6,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.swayambhunath,
     },
     {
       dayNumber: 3,
@@ -175,6 +182,7 @@ export const FALLBACK_TRIP_KATHMANDU_POKHARA_CHITWAN_EXPERIENCE_NEPAL: PublicTri
       durationHours: 6,
       accommodation: "Hotel",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.chitwanSafari,
     },
     {
       dayNumber: 4,
@@ -217,6 +225,7 @@ export const FALLBACK_TRIP_KATHMANDU_POKHARA_CHITWAN_EXPERIENCE_NEPAL: PublicTri
       durationHours: 4,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: LOCATION_IMAGES.bandipur,
     },
     {
       dayNumber: 7,
@@ -231,6 +240,7 @@ export const FALLBACK_TRIP_KATHMANDU_POKHARA_CHITWAN_EXPERIENCE_NEPAL: PublicTri
       durationHours: 4,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.sarangkot,
     },
     {
       dayNumber: 8,
@@ -245,6 +255,7 @@ export const FALLBACK_TRIP_KATHMANDU_POKHARA_CHITWAN_EXPERIENCE_NEPAL: PublicTri
       durationHours: 4,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.phewaLake,
     },
     {
       dayNumber: 9,

@@ -1,8 +1,8 @@
 import type { PublicTrip } from "@/types/trip";
+import { ITINERARY_IMAGES, LOCATION_IMAGES, TRIP_HERO_IMAGES } from "@/lib/trip-images";
 
 const MAP_URL = "https://himalayancircuit.com/images/map/Group%20277.png";
-const HERO_URL =
-  "https://himalayancircuit.com/storage/media/mardi-himal-trek.webp";
+const HERO_URL = TRIP_HERO_IMAGES["mardi-himal-base-camp-trek"];
 
 export const FALLBACK_TRIP_MARDI_HIMAL_BASE_CAMP_TREK: PublicTrip = {
   id: 19,
@@ -37,7 +37,12 @@ export const FALLBACK_TRIP_MARDI_HIMAL_BASE_CAMP_TREK: PublicTrip = {
   fitnessNotes: ["Strength", "Stamina"],
   recommendedSeasons: ["Autumn", "Spring"],
   mapImageUrl: MAP_URL,
-  galleryImageUrls: [HERO_URL, MAP_URL],
+  galleryImageUrls: [
+    HERO_URL,
+    LOCATION_IMAGES.mardiHimal,
+    LOCATION_IMAGES.mardiHighCamp,
+    LOCATION_IMAGES.australianCamp,
+  ],
   sourceReferenceUrl:
     "https://himalayancircuit.com/tour/mardi-himal-base-camp-trek",
   priceTable: {
@@ -165,6 +170,7 @@ export const FALLBACK_TRIP_MARDI_HIMAL_BASE_CAMP_TREK: PublicTrip = {
       durationHours: 6,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.boudha,
     },
     {
       dayNumber: 3,
@@ -221,6 +227,7 @@ export const FALLBACK_TRIP_MARDI_HIMAL_BASE_CAMP_TREK: PublicTrip = {
       durationHours: 4,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: LOCATION_IMAGES.mardiHighCamp,
     },
     {
       dayNumber: 7,
@@ -235,6 +242,7 @@ export const FALLBACK_TRIP_MARDI_HIMAL_BASE_CAMP_TREK: PublicTrip = {
       durationHours: 4,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.mardiHimal,
     },
     {
       dayNumber: 8,

@@ -1,8 +1,8 @@
 import type { PublicTrip } from "@/types/trip";
+import { ITINERARY_IMAGES, LOCATION_IMAGES, TRIP_HERO_IMAGES } from "@/lib/trip-images";
 
 const MAP_URL = "https://himalayancircuit.com/images/map/Group%20277.png";
-const HERO_URL =
-  "https://himalayancircuit.com/storage/media/Ghorepani-Poonhill-Trek.webp";
+const HERO_URL = TRIP_HERO_IMAGES["ghorepani-poon-hill"];
 
 export const FALLBACK_TRIP_GHOREPANI_POON_HILL: PublicTrip = {
   id: 3,
@@ -38,7 +38,12 @@ export const FALLBACK_TRIP_GHOREPANI_POON_HILL: PublicTrip = {
   fitnessNotes: ["Aerobic fitness"],
   recommendedSeasons: ["All year round"],
   mapImageUrl: MAP_URL,
-  galleryImageUrls: [HERO_URL, MAP_URL],
+  galleryImageUrls: [
+    HERO_URL,
+    "/images/trips/ghorepani-poon-hill/gallery-2511.jpeg",
+    LOCATION_IMAGES.poonHill,
+    LOCATION_IMAGES.ghandruk,
+  ],
   sourceReferenceUrl:
     "https://himalayancircuit.com/tour/ghorepani-poonhill-trek-itinerary-price",
   priceTable: {
@@ -175,6 +180,7 @@ export const FALLBACK_TRIP_GHOREPANI_POON_HILL: PublicTrip = {
       durationHours: 7,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.ghorepani,
     },
     {
       dayNumber: 4,
@@ -189,6 +195,7 @@ export const FALLBACK_TRIP_GHOREPANI_POON_HILL: PublicTrip = {
       durationHours: 7,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.poonHill,
     },
     {
       dayNumber: 5,
@@ -231,6 +238,7 @@ export const FALLBACK_TRIP_GHOREPANI_POON_HILL: PublicTrip = {
       durationHours: 5,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.swayambhunath,
     },
     {
       dayNumber: 8,
@@ -245,6 +253,7 @@ export const FALLBACK_TRIP_GHOREPANI_POON_HILL: PublicTrip = {
       durationHours: 3,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.boudha,
     },
   ],
 };

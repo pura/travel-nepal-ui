@@ -1,5 +1,8 @@
 import type { PublicTrip } from "@/types/trip";
+import { ITINERARY_IMAGES, LOCATION_IMAGES, TRIP_HERO_IMAGES } from "@/lib/trip-images";
 import { FALLBACK_DETAIL_MOCK_CITY_TOUR } from "@/lib/fallback-trips/fallback-trip-detail-mocks";
+
+const HERO_URL = TRIP_HERO_IMAGES["scenic-nepal-7-days"];
 
 export const FALLBACK_TRIP_SCENIC_NEPAL_7_DAYS: PublicTrip = {
   id: 5,
@@ -16,11 +19,15 @@ export const FALLBACK_TRIP_SCENIC_NEPAL_7_DAYS: PublicTrip = {
   difficultyLevel: "easy",
   interestTags: ["culture", "mountains", "lakes", "heritage", "scenic_drives"],
   priceFrom: { amount: "340", currency: "GBP" },
-  imageUrl:
-    "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
+  imageUrl: HERO_URL,
   startingRegion: { slug: "kathmandu-valley", name: "Kathmandu Valley" },
   ...FALLBACK_DETAIL_MOCK_CITY_TOUR,
-  galleryImageUrls: ["https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80"],
+  galleryImageUrls: [
+    HERO_URL,
+    LOCATION_IMAGES.boudha,
+    LOCATION_IMAGES.phewaLake,
+    LOCATION_IMAGES.sarangkot,
+  ],
   services: {
     included: [
       "3 nights in a hotel in Kathmandu (twin/shared basis)",
@@ -64,6 +71,7 @@ export const FALLBACK_TRIP_SCENIC_NEPAL_7_DAYS: PublicTrip = {
         "After a delicious breakfast, get ready for your first day of sightseeing. First is a tour of Pashupatinath Temple, located on the bank of the Bagmati River where you can see the rituals of Hindu people and their morning activities. You might also witness the rare ceremony of funerals - as per Hindu traditions, cremation occurs on ghats on the bank of holy river Bagmati. Next, is a visit to The Boudhnath stupa, one of the largest Buddhist stupas in Nepal.\n\nIn the afternoon, you will drive to Swoyambhunath stupa located on the hill top overlooking Kathmandu valley where both Hindu and Buddhist pay homage to the site.\n\nFinally, you will head to Patan, known as 'City of Beauty' and famous for its metal works and wood carvings. You'll stroll the narrow lanes of Patan and visit Patan Durbar Square, Krishna Temple, Mahaboudhi stupa and The Golden Temple.\n\nAfterward, return back to your hotel and relax.",
       meals: "Meals: Breakfast",
       destinationName: "Kathmandu",
+      imageUrl: ITINERARY_IMAGES.boudha,
     },
     {
       dayNumber: 3,
@@ -82,6 +90,7 @@ export const FALLBACK_TRIP_SCENIC_NEPAL_7_DAYS: PublicTrip = {
         "Start your morning early to witness the magnificent sunrise over the Himalayas from your hotel. Afterwards, enjoy a well-deserved breakfast.\n\nAfter breakfast, you will drive to Pokhara, famous for its wonderful views of the Himalayas and its snow-fed lakes. The reflection of Mt. Fishtail and the Annapurna Range on Lake Phewa is breathtaking!\n\nPokhara is also the base camp for trekking in the Annapurna region, with other day-hike tours around valley rim. Use the afternoon to stroll around Phewa Lakeside area.",
       meals: "Meals: Breakfast",
       destinationName: "Pokhara",
+      imageUrl: ITINERARY_IMAGES.phewaLake,
     },
     {
       dayNumber: 5,
@@ -91,6 +100,7 @@ export const FALLBACK_TRIP_SCENIC_NEPAL_7_DAYS: PublicTrip = {
         "Begin your morning early with an excursion to Sarangkot to see the sunrise over Mt. Annapurna, Dhaulagiri massif and Mt. Fishtail.\n\nAfterward, you'll return to your hotel for breakfast and to relax a bit.\n\nLater in the afternoon, commence on a Pokhara City Tour which includes Bindavashini Temple, Seti Gorge, Devis fall and Gupteshwor Mahadev Cave. The tour includes a complimentary boat ride on Phewa Lake in Pokhara.",
       meals: "Meals: Breakfast",
       destinationName: "Pokhara",
+      imageUrl: ITINERARY_IMAGES.sarangkot,
     },
     {
       dayNumber: 6,

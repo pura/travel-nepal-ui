@@ -1,7 +1,8 @@
 import type { PublicTrip } from "@/types/trip";
+import { ITINERARY_IMAGES, LOCATION_IMAGES, TRIP_HERO_IMAGES } from "@/lib/trip-images";
 
 const MAP_URL = "https://himalayancircuit.com/images/map/Group%20277.png";
-const HERO_URL = "https://himalayancircuit.com/storage/media/gokyo-trek.jpg";
+const HERO_URL = TRIP_HERO_IMAGES["ebc-trek-with-gokyo-lake-trekking"];
 
 export const FALLBACK_TRIP_EBC_TREK_WITH_GOKYO_LAKE_TREKKING: PublicTrip = {
   id: 24,
@@ -38,7 +39,12 @@ export const FALLBACK_TRIP_EBC_TREK_WITH_GOKYO_LAKE_TREKKING: PublicTrip = {
   fitnessNotes: ["Strength", "Stamina"],
   recommendedSeasons: ["Autumn", "Spring"],
   mapImageUrl: MAP_URL,
-  galleryImageUrls: [HERO_URL, MAP_URL],
+  galleryImageUrls: [
+    HERO_URL,
+    LOCATION_IMAGES.gokyoLake,
+    LOCATION_IMAGES.namche,
+    LOCATION_IMAGES.kalaPatthar,
+  ],
   sourceReferenceUrl:
     "https://himalayancircuit.com/tour/ebc-trek-with-gokyo-lake-trekking",
   priceTable: {
@@ -167,6 +173,7 @@ export const FALLBACK_TRIP_EBC_TREK_WITH_GOKYO_LAKE_TREKKING: PublicTrip = {
       durationHours: 5,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.swayambhunath,
     },
     {
       dayNumber: 3,
@@ -181,6 +188,7 @@ export const FALLBACK_TRIP_EBC_TREK_WITH_GOKYO_LAKE_TREKKING: PublicTrip = {
       durationHours: 4,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.lukla,
     },
     {
       dayNumber: 4,
@@ -195,6 +203,7 @@ export const FALLBACK_TRIP_EBC_TREK_WITH_GOKYO_LAKE_TREKKING: PublicTrip = {
       durationHours: 6,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.namche,
     },
     {
       dayNumber: 5,
@@ -223,6 +232,7 @@ export const FALLBACK_TRIP_EBC_TREK_WITH_GOKYO_LAKE_TREKKING: PublicTrip = {
       durationHours: 6,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.tengboche,
     },
     {
       dayNumber: 7,
@@ -237,6 +247,7 @@ export const FALLBACK_TRIP_EBC_TREK_WITH_GOKYO_LAKE_TREKKING: PublicTrip = {
       durationHours: 4,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.dingboche,
     },
     {
       dayNumber: 8,
@@ -279,6 +290,7 @@ export const FALLBACK_TRIP_EBC_TREK_WITH_GOKYO_LAKE_TREKKING: PublicTrip = {
       durationHours: 8,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.kalaPatthar,
     },
     {
       dayNumber: 11,
@@ -321,6 +333,7 @@ export const FALLBACK_TRIP_EBC_TREK_WITH_GOKYO_LAKE_TREKKING: PublicTrip = {
       durationHours: 6,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.gokyoLake,
     },
     {
       dayNumber: 14,

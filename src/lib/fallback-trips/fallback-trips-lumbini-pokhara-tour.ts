@@ -1,8 +1,8 @@
 import type { PublicTrip } from "@/types/trip";
+import { ITINERARY_IMAGES, LOCATION_IMAGES, TRIP_HERO_IMAGES } from "@/lib/trip-images";
 
 const MAP_URL = "https://himalayancircuit.com/images/map/Group%20277.png";
-const HERO_URL =
-  "https://himalayancircuit.com/storage/media/lumbini-tour.webp";
+const HERO_URL = TRIP_HERO_IMAGES["lumbini-pokhara-tour"];
 
 export const FALLBACK_TRIP_LUMBINI_POKHARA_TOUR: PublicTrip = {
   id: 28,
@@ -41,9 +41,9 @@ export const FALLBACK_TRIP_LUMBINI_POKHARA_TOUR: PublicTrip = {
   mapImageUrl: MAP_URL,
   galleryImageUrls: [
     HERO_URL,
-    "https://himalayancircuit.com/storage/media/Peace-Stupa-Lumbini.webp",
-    "https://himalayancircuit.com/storage/media/Namobuddha-Monastery-photo.webp",
-    MAP_URL,
+    LOCATION_IMAGES.lumbini,
+    LOCATION_IMAGES.peaceStupaPokhara,
+    LOCATION_IMAGES.boudha,
   ],
   sourceReferenceUrl:
     "https://himalayancircuit.com/tour/lumbini-pokhara-tour",
@@ -165,6 +165,7 @@ export const FALLBACK_TRIP_LUMBINI_POKHARA_TOUR: PublicTrip = {
       durationHours: 5,
       accommodation: "Monastery",
       meals: "Breakfast, dinner",
+      imageUrl: ITINERARY_IMAGES.boudha,
     },
     {
       dayNumber: 3,
@@ -193,6 +194,7 @@ export const FALLBACK_TRIP_LUMBINI_POKHARA_TOUR: PublicTrip = {
       durationHours: 8,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.lumbini,
     },
     {
       dayNumber: 5,
@@ -221,6 +223,7 @@ export const FALLBACK_TRIP_LUMBINI_POKHARA_TOUR: PublicTrip = {
       durationHours: 6,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.sarangkot,
     },
     {
       dayNumber: 7,
@@ -249,6 +252,7 @@ export const FALLBACK_TRIP_LUMBINI_POKHARA_TOUR: PublicTrip = {
       durationHours: 7,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.swayambhunath,
     },
     {
       dayNumber: 9,

@@ -1,8 +1,8 @@
 import type { PublicTrip } from "@/types/trip";
+import { ITINERARY_IMAGES, LOCATION_IMAGES, TRIP_HERO_IMAGES } from "@/lib/trip-images";
 
 const MAP_URL = "https://himalayancircuit.com/images/map/Group%20277.png";
-const HERO_URL =
-  "https://himalayancircuit.com/storage/media/Everest-Base-Camp.webp";
+const HERO_URL = TRIP_HERO_IMAGES["everest-base-camp-trek"];
 
 export const FALLBACK_TRIP_EVEREST_BASE_CAMP: PublicTrip = {
   id: 12,
@@ -38,7 +38,12 @@ export const FALLBACK_TRIP_EVEREST_BASE_CAMP: PublicTrip = {
   fitnessNotes: ["Strength", "Stamina"],
   recommendedSeasons: ["Autumn", "Spring"],
   mapImageUrl: MAP_URL,
-  galleryImageUrls: [HERO_URL, MAP_URL],
+  galleryImageUrls: [
+    HERO_URL,
+    "/images/trips/everest-base-camp/gallery-2516.jpeg",
+    LOCATION_IMAGES.namche,
+    LOCATION_IMAGES.kalaPatthar,
+  ],
   sourceReferenceUrl: "https://himalayancircuit.com/tour/everest-base-camp-trek",
   priceTable: {
     currency: "USD",
@@ -169,6 +174,7 @@ export const FALLBACK_TRIP_EVEREST_BASE_CAMP: PublicTrip = {
       durationHours: 5,
       accommodation: "Hotel",
       meals: "Breakfast",
+      imageUrl: ITINERARY_IMAGES.swayambhunath,
     },
     {
       dayNumber: 3,
@@ -183,6 +189,7 @@ export const FALLBACK_TRIP_EVEREST_BASE_CAMP: PublicTrip = {
       durationHours: 4,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.lukla,
     },
     {
       dayNumber: 4,
@@ -197,6 +204,7 @@ export const FALLBACK_TRIP_EVEREST_BASE_CAMP: PublicTrip = {
       durationHours: 5,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.namche,
     },
     {
       dayNumber: 5,
@@ -225,6 +233,7 @@ export const FALLBACK_TRIP_EVEREST_BASE_CAMP: PublicTrip = {
       durationHours: 5,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.tengboche,
     },
     {
       dayNumber: 7,
@@ -239,6 +248,7 @@ export const FALLBACK_TRIP_EVEREST_BASE_CAMP: PublicTrip = {
       durationHours: 5,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.dingboche,
     },
     {
       dayNumber: 8,
@@ -309,6 +319,7 @@ export const FALLBACK_TRIP_EVEREST_BASE_CAMP: PublicTrip = {
       durationHours: 7,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.kalaPatthar,
     },
     {
       dayNumber: 13,

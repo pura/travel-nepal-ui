@@ -1,3 +1,4 @@
+import { HOME_IMAGES } from "@/lib/trip-images";
 import Image from "next/image";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
@@ -6,8 +7,7 @@ import { HeroInquiryBox } from "@/components/home/hero-inquiry-box";
 import { getWhatsAppUrl, TRUST_BADGES } from "@/lib/site-config";
 import type { IconName } from "@/components/ui/icons";
 
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1920&q=85&auto=format&fit=crop";
+const HERO_IMAGE = HOME_IMAGES.hero;
 
 const badgeIcons = {
   compass: "compass",

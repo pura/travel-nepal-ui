@@ -1,8 +1,8 @@
 import type { PublicTrip } from "@/types/trip";
+import { ITINERARY_IMAGES, LOCATION_IMAGES, TRIP_HERO_IMAGES } from "@/lib/trip-images";
 
 const MAP_URL = "https://himalayancircuit.com/images/map/Group%20277.png";
-const HERO_URL =
-  "https://himalayancircuit.com/storage/media/8-days-soft-hike.webp";
+const HERO_URL = TRIP_HERO_IMAGES["ghandruk-landruk-annapurna-trek-experience"];
 
 export const FALLBACK_TRIP_GHANDRUK_LANDRUK_ANNAPURNA_TREK_EXPERIENCE: PublicTrip = {
   id: 20,
@@ -38,7 +38,11 @@ export const FALLBACK_TRIP_GHANDRUK_LANDRUK_ANNAPURNA_TREK_EXPERIENCE: PublicTri
   fitnessNotes: ["Aerobic fitness"],
   recommendedSeasons: ["All year round"],
   mapImageUrl: MAP_URL,
-  galleryImageUrls: [HERO_URL, MAP_URL],
+  galleryImageUrls: [
+    HERO_URL,
+    LOCATION_IMAGES.ghandruk,
+    LOCATION_IMAGES.australianCamp,
+  ],
   sourceReferenceUrl:
     "https://himalayancircuit.com/tour/ghandruk-landruk-annapurna-trek-experience",
   priceTable: {
@@ -182,6 +186,7 @@ export const FALLBACK_TRIP_GHANDRUK_LANDRUK_ANNAPURNA_TREK_EXPERIENCE: PublicTri
       durationHours: 5,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: LOCATION_IMAGES.australianCamp,
     },
     {
       dayNumber: 4,
@@ -210,6 +215,7 @@ export const FALLBACK_TRIP_GHANDRUK_LANDRUK_ANNAPURNA_TREK_EXPERIENCE: PublicTri
       durationHours: 5,
       accommodation: "Tea house / mountain lodge",
       meals: "Breakfast, lunch, dinner",
+      imageUrl: ITINERARY_IMAGES.ghandruk,
     },
     {
       dayNumber: 6,
