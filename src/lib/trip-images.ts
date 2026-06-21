@@ -92,6 +92,17 @@ export const ITINERARY_IMAGES = {
   ghorepani: "/images/itinerary/ghorepani.jpg",
 } as const;
 
+/** Dedicated Annapurna Circuit photography set */
+export const ANNAPURNA_CIRCUIT_IMAGES = {
+  hero: "/images/trips/annapurna-circuit/annapurna-1.jpg",
+  two: "/images/trips/annapurna-circuit/annapurna-2.jpg",
+  three: "/images/trips/annapurna-circuit/annapurna-3.jpg",
+  four: "/images/trips/annapurna-circuit/annapurna-4.jpg",
+  itineraryTwo: "/images/trips/annapurna-circuit/itinerary-2.jpg",
+  itineraryThree: "/images/trips/annapurna-circuit/itinerary-3.jpg",
+  itineraryFour: "/images/trips/annapurna-circuit/itinerary-4.jpg",
+} as const;
+
 export const TRIP_HERO_IMAGES = {
   "everest-base-camp-trek": "/images/trips/everest-base-camp/hero.webp",
   "ebc-trek-with-gokyo-lake-trekking": "/images/trips/ebc-gokyo/hero.jpg",
@@ -105,7 +116,7 @@ export const TRIP_HERO_IMAGES = {
   "nepal-round-trip": "/images/trips/nepal-round-trip/hero.jpg",
   "lumbini-pokhara-tour": "/images/trips/lumbini-pokhara/hero.jpg",
   "chisapani-helambu-trek-itinerary-cost": "/images/trips/chisapani-helambu/hero.webp",
-  "annapurna-circuit-trek-classic-trek": "/images/trips/annapurna-circuit/hero.jpg",
+  "annapurna-circuit-trek-classic-trek": ANNAPURNA_CIRCUIT_IMAGES.hero,
   "poon-hill-taster-pokhara-5-days": "/images/trips/poon-hill-taster/hero.jpg",
   "pikey-base-camp-trek-everest-view": "/images/trips/pikey-peak/hero.webp",
   "monk-for-a-month-nepal": "/images/trips/monk-month/hero.jpg",
